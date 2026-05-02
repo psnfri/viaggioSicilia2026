@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a2744">
+<title>Sicilia Occidentale 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --gold:#C9A84C;--gold2:#E8C96A;
+  --blu:#1a2744;--blu2:#243460;--blu3:#1d2d55;
+  --cream:#F5EFE0;--rust:#B84A2C;--sage:#4A7C59;
+  --sage-light:#8FC49A;--rust-light:#E8856A;
+  --text:#1a1a1a;--muted:#6b6b6b;
+  --card-bg:rgba(255,255,255,0.04);
+  --card-border:rgba(255,255,255,0.08);
+  --gold-border:rgba(201,168,76,0.3);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--blu);color:var(--cream);overflow-x:hidden;min-height:100vh;line-height:1.5}
+
+/* ════════════════════════════════
+   INTRO CINEMATOGRAFICA (10 sec)
+════════════════════════════════ */
+#intro{
+  position:fixed;inset:0;z-index:2000;
+  background:var(--blu);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;
+}
+.intro-hidden{animation:fadeOutIntro 0.7s ease forwards!important}
+@keyframes fadeOutIntro{to{opacity:0;pointer-events:none}}
+
+.intro-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 25% 40%, rgba(201,168,76,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 60%, rgba(74,124,89,0.08) 0%, transparent 50%);
+}
+.intro-grain{
+  position:absolute;inset:0;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+/* Logo intro */
+.intro-content{position:relative;text-align:center;z-index:1;width:100%;max-width:400px}
+.intro-eyebrow{
+  font-size:10px;letter-spacing:5px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:12px;
+  opacity:0;animation:riseIn 0.8s ease 0.3s forwards;
+}
+.intro-title{
+  font-family:'Playfair Display';
+  font-size:clamp(32px,7vw,56px);
+  line-height:1.05;color:var(--cream);
+  opacity:0;animation:riseIn 0.8s ease 0.6s forwards;
+}
+.intro-title em{font-style:italic;color:var(--gold);display:block}
+.intro-divider{
+  width:60px;height:2px;background:var(--gold);margin:16px auto;
+  transform:scaleX(0);transform-origin:center;
+  animation:expandLine 0.6s ease 1.2s forwards;
+}
+.intro-sub{
+  font-size:12px;letter-spacing:2px;color:rgba(245,239,224,0.45);
+  text-transform:uppercase;
+  opacity:0;animation:riseIn 0.6s ease 1.5s forwards;
+}
+
+/* Timeline tappe */
+.intro-timeline{
+  position:relative;margin-top:36px;width:100%;
+  opacity:0;animation:riseIn 0.6s ease 1.8s forwards;
+}
+.tl-track{
+  position:absolute;top:12px;left:20px;right:20px;height:1px;
+  background:rgba(201,168,76,0.15);
+  overflow:hidden;
+}
+.tl-progress{
+  height:100%;background:var(--gold);width:0;
+  animation:trackFill 2.5s ease 2.2s forwards;
+}
+@keyframes trackFill{to{width:100%}}
+
+.tl-stops{display:flex;justify-content:space-between;padding:0;position:relative}
+.tl-stop{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  flex:1;
+}
+.tl-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--blu2);border:1.5px solid rgba(201,168,76,0.4);
+  position:relative;z-index:1;
+  transition:all 0.3s;
+}
+.tl-dot.lit{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(201,168,76,0.5)}
+.tl-dot.base-dot{width:12px;height:12px}
+.tl-label{font-size:8px;color:rgba(245,239,224,0.45);text-align:center;line-height:1.3;max-width:44px}
+.tl-day{font-size:8px;color:var(--gold);font-weight:500;margin-bottom:2px}
+
+/* Barra caricamento */
+.intro-loader{
+  margin-top:36px;
+  opacity:0;animation:riseIn 0.5s ease 2.0s forwards;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.loader-track{width:140px;height:1.5px;background:rgba(245,239,224,0.1);border-radius:2px;overflow:hidden}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;animation:loaderAnim 7s linear 3s forwards}
+@keyframes loaderAnim{to{width:100%}}
+.loader-txt{font-size:9px;letter-spacing:3px;color:rgba(245,239,224,0.3);text-transform:uppercase}
+
+/* Flash finale */
+.intro-flash{
+  position:absolute;inset:0;background:var(--cream);opacity:0;pointer-events:none;
+  animation:flashAnim 0.4s ease 9.8s;
+}
+@keyframes flashAnim{0%{opacity:0}40%{opacity:0.3}100%{opacity:0}}
+
+@keyframes riseIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes expandLine{to{transform:scaleX(1)}}
+
+/* ════════════════════════════════
+   LINGUA SWITCH
+════════════════════════════════ */
+.lang-switch{
+  position:fixed;top:14px;right:16px;z-index:500;
+  display:flex;gap:4px;background:rgba(26,36,68,0.9);
+  border:1px solid var(--gold-border);border-radius:20px;padding:3px;
+}
+.lang-btn{
+  padding:4px 10px;border-radius:16px;font-size:10px;font-weight:500;
+  letter-spacing:1px;cursor:pointer;border:none;background:transparent;
+  color:rgba(245,239,224,0.4);transition:all 0.2s;text-transform:uppercase;
+}
+.lang-btn.active{background:var(--gold);color:var(--blu)}
+
+/* ════════════════════════════════
+   APP PRINCIPALE
+════════════════════════════════ */
+#app{opacity:0;min-height:100vh;transition:opacity 0.8s ease}
+#app.visible{opacity:1}
+
+/* Header sticky */
+.app-header{
+  background:linear-gradient(180deg,var(--blu) 0%,rgba(26,39,68,0.97) 100%);
+  padding:16px 16px 0;
+  border-bottom:1px solid rgba(201,168,76,0.15);
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(20px);
+}
+.header-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.app-brand{display:flex;flex-direction:column;gap:2px}
+.app-brand .title{font-family:'Playfair Display';font-size:17px;color:var(--cream);line-height:1}
+.app-brand .title em{font-style:italic;color:var(--gold)}
+.app-brand .subtitle{font-size:10px;letter-spacing:2px;color:rgba(245,239,224,0.4);text-transform:uppercase}
+.trip-dates{
+  background:rgba(201,168,76,0.1);border:1px solid var(--gold-border);
+  border-radius:8px;padding:5px 10px;text-align:right;
+}
+.trip-dates .d{font-size:11px;font-weight:500;color:var(--gold)}
+.trip-dates .p{font-size:9px;color:rgba(245,239,224,0.4)}
+
+/* Nav giorni */
+.days-nav{
+  display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.days-nav::-webkit-scrollbar{display:none}
+.day-tab{
+  flex-shrink:0;padding:7px 14px;border-radius:20px;
+  border:1px solid rgba(201,168,76,0.25);
+  font-size:11px;color:rgba(245,239,224,0.55);
+  cursor:pointer;transition:all 0.2s;white-space:nowrap;
+  background:transparent;font-family:'DM Sans';
+}
+.day-tab:hover{border-color:var(--gold);color:var(--cream)}
+.day-tab.active{background:var(--gold);color:var(--blu);border-color:var(--gold);font-weight:500}
+
+/* ════════════════════════════════
+   CONTENUTO
+════════════════════════════════ */
+.app-content{padding:18px 16px 100px;max-width:680px;margin:0 auto}
+
+/* Pannelli giorno */
+.day-panel{display:none}
+.day-panel.active{display:block;animation:fadePanel 0.3s ease}
+@keyframes fadePanel{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Hero card */
+.day-hero{
+  background:linear-gradient(135deg,rgba(201,168,76,0.12) 0%,rgba(36,52,96,0.9) 100%);
+  border:1px solid rgba(201,168,76,0.2);border-radius:18px;
+  padding:22px;margin-bottom:18px;position:relative;overflow:hidden;
+}
+.day-hero::after{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,0.15),transparent);
+  pointer-events:none;
+}
+.day-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--gold);color:var(--blu);
+  padding:4px 10px;border-radius:10px;
+  font-size:10px;font-weight:500;letter-spacing:0.5px;
+  margin-bottom:10px;
+}
+.day-hero h2{
+  font-family:'Playfair Display';font-size:19px;
+  line-height:1.3;color:var(--cream);margin-bottom:6px;
+}
+.day-route{font-size:11px;color:rgba(245,239,224,0.5);line-height:1.6}
+.day-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:16px;padding-top:14px;
+  border-top:1px solid rgba(201,168,76,0.12);
+}
+.stat{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center}
+.stat-val{font-size:13px;font-weight:500;color:var(--gold)}
+.stat-lbl{font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:0.5px}
+
+/* Sezione Hotels prenotati */
+.booking-strip{
+  background:rgba(201,168,76,0.06);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:12px;padding:14px;margin-bottom:18px;
+}
+.booking-strip h3{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.booking-item{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.booking-item:last-child{border-bottom:none;padding-bottom:0}
+.b-icon{width:28px;height:28px;border-radius:8px;background:rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.b-info .name{font-size:12px;font-weight:500;color:var(--cream);margin-bottom:2px}
+.b-info .detail{font-size:10px;color:rgba(245,239,224,0.45);line-height:1.5}
+.b-warn{font-size:9px;color:var(--rust-light);font-weight:500;margin-top:3px}
+
+/* Stop cards */
+.stop-card{
+  background:var(--card-bg);border:1px solid var(--card-border);
+  border-radius:14px;padding:16px;margin-bottom:12px;
+  cursor:pointer;transition:all 0.25s;
+  -webkit-user-select:none;user-select:none;
+}
+.stop-card:hover{background:rgba(255,255,255,0.07);border-color:var(--gold-border)}
+.stop-card.expanded{
+  border-color:rgba(201,168,76,0.35);
+  background:rgba(201,168,76,0.05);
+}
+.stop-header{display:flex;align-items:flex-start;gap:12px}
+.stop-time{
+  flex-shrink:0;background:var(--blu2);
+  border:1px solid var(--gold-border);
+  border-radius:9px;padding:6px 9px;text-align:center;min-width:50px;
+}
+.stop-time .t{font-size:13px;font-weight:500;color:var(--gold);display:block;line-height:1}
+.stop-time .dur{font-size:9px;color:rgba(245,239,224,0.35);margin-top:2px;display:block}
+.stop-meta{flex:1;min-width:0}
+.stop-type{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:3px}
+.stop-title{font-family:'Playfair Display';font-size:15px;color:var(--cream);line-height:1.3}
+.stop-sub{font-size:11px;color:rgba(245,239,224,0.45);margin-top:3px}
+.stop-chevron{
+  color:rgba(201,168,76,0.4);font-size:18px;
+  transition:transform 0.3s;padding-top:2px;flex-shrink:0;
+  line-height:1;
+}
+.stop-card.expanded .stop-chevron{transform:rotate(90deg)}
+
+/* Dettaglio */
+.stop-detail{
+  display:none;margin-top:16px;padding-top:14px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.stop-card.expanded .stop-detail{display:block}
+
+/* Sezioni dentro il dettaglio */
+.dsec{margin-bottom:16px}
+.dsec:last-child{margin-bottom:0}
+.dsec-head{
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+.dsec-head::after{content:'';flex:1;height:1px;background:rgba(201,168,76,0.15)}
+.dsec p{font-size:13px;line-height:1.75;color:rgba(245,239,224,0.82)}
+
+/* Aneddoto box */
+.aneddoto{
+  background:rgba(201,168,76,0.07);
+  border-left:2.5px solid var(--gold);
+  border-radius:0 10px 10px 0;
+  padding:12px 14px;margin-top:6px;
+}
+.aneddoto p{font-size:12.5px;line-height:1.7;color:rgba(245,239,224,0.8)}
+
+/* Cinema badge */
+.cinema-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(184,74,44,0.15);border:1px solid rgba(184,74,44,0.35);
+  color:var(--rust-light);border-radius:6px;
+  padding:3px 8px;font-size:9px;letter-spacing:0.5px;
+  margin-bottom:8px;font-weight:500;
+}
+
+/* Cibo card */
+.cibo-card{
+  background:rgba(74,124,89,0.08);
+  border:1px solid rgba(74,124,89,0.25);
+  border-radius:10px;padding:12px 14px;margin-top:6px;
+}
+.cibo-name{font-size:12px;font-weight:500;color:var(--sage-light);margin-bottom:4px}
+.cibo-desc{font-size:12px;color:rgba(245,239,224,0.65);line-height:1.6}
+
+/* Ristoranti */
+.ristoranti{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.rist-item{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:10px;padding:10px 12px;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.rist-num{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--gold);color:var(--blu);
+  font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+}
+.rist-name{font-size:12px;font-weight:500;color:var(--cream);margin-bottom:3px}
+.rist-desc{font-size:11px;color:rgba(245,239,224,0.5);line-height:1.5}
+
+/* Prenotazione info */
+.preno-box{
+  background:rgba(26,36,68,0.6);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;padding:12px 14px;
+}
+.preno-row{display:flex;gap:8px;align-items:flex-start;padding:4px 0;font-size:12px}
+.preno-ico{width:16px;flex-shrink:0;text-align:center;margin-top:1px}
+.preno-val{color:rgba(245,239,224,0.8);line-height:1.5}
+.preno-val strong{color:var(--cream)}
+.preno-warn{color:var(--rust-light);font-weight:500}
+
+/* ════════════════════════════════
+   AUDIO BAR
+════════════════════════════════ */
+.audio-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(18,28,58,0.97);
+  backdrop-filter:blur(24px);
+  border-top:1px solid rgba(201,168,76,0.15);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:12px;
+  z-index:200;
+}
+.audio-play-btn{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--gold);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--blu);font-size:15px;flex-shrink:0;
+  transition:transform 0.2s,background 0.2s;
+}
+.audio-play-btn:hover{transform:scale(1.08);background:var(--gold2)}
+.audio-info{flex:1;min-width:0}
+.audio-title{font-size:12px;font-weight:500;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio-sub{font-size:10px;color:rgba(245,239,224,0.4);margin-top:2px}
+.audio-prog-wrap{height:2px;background:rgba(255,255,255,0.08);border-radius:2px;margin-top:6px;overflow:hidden;cursor:pointer}
+.audio-prog{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));width:0;transition:width 0.3s;border-radius:2px}
+.audio-read-btn{
+  background:rgba(201,168,76,0.1);border:1px solid var(--gold-border);
+  border-radius:8px;padding:6px 10px;font-size:10px;color:var(--gold);
+  cursor:pointer;white-space:nowrap;flex-shrink:0;
+  font-family:'DM Sans';transition:background 0.2s;
+}
+.audio-read-btn:hover{background:rgba(201,168,76,0.2)}
+
+/* ════════════════════════════════
+   LEGENDA LINGUA
+════════════════════════════════ */
+[data-it],[data-es]{transition:opacity 0.2s}
+body.es [data-it]{display:none}
+body.es [data-es]{display:block}
+body:not(.es) [data-es]{display:none}
+body:not(.es) [data-it]{display:block}
+/* inline spans */
+span[data-it],span[data-es]{display:inline!important}
+body.es span[data-it]{display:none!important}
+body:not(.es) span[data-es]{display:none!important}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media(max-width:360px){
+  .day-stats{grid-template-columns:repeat(2,1fr);gap:8px}
+  .tl-label{font-size:7px}
+  .intro-title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ LANGUAGE SWITCH ════ -->
+<div class="lang-switch" id="langSwitch">
+  <button class="lang-btn active" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
+
+<!-- ════ INTRO ════ -->
+<div id="intro">
+  <div class="intro-bg"></div>
+  <div class="intro-grain"></div>
+  <div class="intro-flash"></div>
+
+  <div class="intro-content">
+    <div class="intro-eyebrow">
+      <span data-it>27 Giugno — 4 Luglio 2025 · Diario di Viaggio</span>
+      <span data-es>27 Junio — 4 Julio 2025 · Diario de Viaje</span>
+    </div>
+    <h1 class="intro-title">
+      Sicilia<br>
+      <em>Occidentale</em>
+    </h1>
+    <div class="intro-divider"></div>
+    <div class="intro-sub">
+      <span data-it>Cava de' Tirreni &nbsp;→&nbsp; Palermo &nbsp;→&nbsp; Trapani &nbsp;→&nbsp; Sciacca</span>
+      <span data-es>Cava de' Tirreni &nbsp;→&nbsp; Palermo &nbsp;→&nbsp; Trápani &nbsp;→&nbsp; Sciacca</span>
+    </div>
+
+    <!-- Timeline -->
+    <div class="intro-timeline">
+      <div class="tl-track"><div class="tl-progress"></div></div>
+      <div class="tl-stops">
+        <div class="tl-stop">
+          <div class="tl-day">GG1</div>
+          <div class="tl-dot" id="dot0"></div>
+          <div class="tl-label">Scilla<br>Cefalù</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG2</div>
+          <div class="tl-dot base-dot" id="dot1"></div>
+          <div class="tl-label">Palermo</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG3</div>
+          <div class="tl-dot" id="dot2"></div>
+          <div class="tl-label">S.Vito<br>Scopello</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG4</div>
+          <div class="tl-dot" id="dot3"></div>
+          <div class="tl-label">Segesta<br>Zingaro</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG5</div>
+          <div class="tl-dot" id="dot4"></div>
+          <div class="tl-label">Egadi</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG6</div>
+          <div class="tl-dot" id="dot5"></div>
+          <div class="tl-label">Mazara<br>Mozia</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG7</div>
+          <div class="tl-dot base-dot" id="dot6"></div>
+          <div class="tl-label">Sciacca<br>Selinunte</div>
+        </div>
+        <div class="tl-stop">
+          <div class="tl-day">GG8</div>
+          <div class="tl-dot" id="dot7"></div>
+          <div class="tl-label">Tropea<br>Pizzo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="intro-loader">
+      <div class="loader-track"><div class="loader-fill"></div></div>
+      <div class="loader-txt">
+        <span data-it>Caricamento</span>
+        <span data-es>Cargando</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ APP ════ -->
+<div id="app">
+
+  <!-- Header -->
+  <div class="app-header">
+    <div class="header-row">
+      <div class="app-brand">
+        <div class="title">Sicilia <em>Occ.</em></div>
+        <div class="subtitle">
+          <span data-it>Diario di Viaggio</span>
+          <span data-es>Diario de Viaje</span>
+        </div>
+      </div>
+      <div class="trip-dates">
+        <div class="d">27/06 → 04/07</div>
+        <div class="p">8 <span data-it>giorni</span><span data-es>días</span></div>
+      </div>
+    </div>
+    <div class="days-nav" id="daysNav">
+      <div class="day-tab active" onclick="showDay(0)">
+        <span data-it>Gg. 1 · Scilla</span><span data-es>Día 1 · Scilla</span>
+      </div>
+      <div class="day-tab" onclick="showDay(1)">
+        <span data-it>Gg. 2 · Palermo</span><span data-es>Día 2 · Palermo</span>
+      </div>
+      <div class="day-tab" onclick="showDay(2)">
+        <span data-it>Gg. 3 · S.Vito</span><span data-es>Día 3 · S.Vito</span>
+      </div>
+      <div class="day-tab" onclick="showDay(3)">
+        <span data-it>Gg. 4 · Segesta</span><span data-es>Día 4 · Segesta</span>
+      </div>
+      <div class="day-tab" onclick="showDay(4)">
+        <span data-it>Gg. 5 · Egadi</span><span data-es>Día 5 · Egadi</span>
+      </div>
+      <div class="day-tab" onclick="showDay(5)">
+        <span data-it>Gg. 6 · Mazara</span><span data-es>Día 6 · Mazara</span>
+      </div>
+      <div class="day-tab" onclick="showDay(6)">
+        <span data-it>Gg. 7 · Sciacca</span><span data-es>Día 7 · Sciacca</span>
+      </div>
+      <div class="day-tab" onclick="showDay(7)">
+        <span data-it>Gg. 8 · Ritorno</span><span data-es>Día 8 · Regreso</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-content">
+
+    <!-- ═══ GIORNO 1 ═══ -->
+    <div class="day-panel active" id="day0">
+
+      <!-- Hero -->
+      <div class="day-hero">
+        <div class="day-badge">📅 27 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 1</div>
+        <h2 data-it>Andata: Cava de' Tirreni → Cefalù → Palermo</h2>
+        <h2 data-es>Camino: Cava de' Tirreni → Cefalù → Palermo</h2>
+        <div class="day-route">
+          <span data-it>Scilla (sosta) · Traghetto Messina · Cefalù · Arrivo Palermo ore 16:30</span>
+          <span data-es>Scilla (parada) · Ferry Messina · Cefalù · Llegada Palermo 16:30</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~565 km</span><span class="stat-lbl"><span data-it>Percorso</span><span data-es>Ruta</span></span></div>
+          <div class="stat"><span class="stat-val">~7h</span><span class="stat-lbl"><span data-it>Guida</span><span data-es>Manejo</span></span></div>
+          <div class="stat"><span class="stat-val">05:00</span><span class="stat-lbl"><span data-it>Partenza</span><span data-es>Salida</span></span></div>
+          <div class="stat"><span class="stat-val">San Paolo</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+
+      <!-- Prenotazione Palermo -->
+      <div class="booking-strip">
+        <h3>🏨 <span data-it>Hotel prenotato — Palermo</span><span data-es>Hotel reservado — Palermo</span></h3>
+        <div class="booking-item">
+          <div class="b-icon">🏨</div>
+          <div class="b-info">
+            <div class="name">Hotel San Paolo Palace</div>
+            <div class="detail">
+              <span data-it>CI: 27/06 · CO: 29/06 · 2 notti · Agoda (carta Hype)<br>156,12 € addebitati il 22/06 · 8 € da pagare in struttura</span>
+              <span data-es>Entrada: 27/06 · Salida: 29/06 · 2 noches · Agoda (tarjeta Hype)<br>156,12 € cobrados el 22/06 · 8 € a pagar en el hotel</span>
+            </div>
+            <div class="b-warn">⚠️ <span data-it>Cancellazione gratuita entro</span><span data-es>Cancelación gratis hasta</span> 24/06 ore 23:59</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAPPA: Scilla -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">08:30</span><span class="dur">~1h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🛑 <span data-it>Sosta</span><span data-es>Parada</span></div>
+            <div class="stop-title">Scilla — Chianalea & Castello Ruffo</div>
+            <div class="stop-sub"><span data-it>Calabria · Ingresso castello 3 €</span><span data-es>Calabria · Entrada castillo 3 €</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia</span><span data-es>La historia</span></div>
+            <p data-it>Chianalea è la "piccola Venezia di Calabria" — le case dei pescatori sono costruite direttamente sugli scogli, alcune raggiungibili solo in barca. Percorrete Via Chianalea la mattina presto: i pescatori che rientrano, le reti stese, i gatti sulle barche. Il Castello Ruffo (IX-X sec.) fu rafforzato da Federico II. Nel 1783 un terremoto devastante spinse 2.500 abitanti sulla spiaggia cercando scampo: uno tsunami li travolse in pochi minuti — una delle più grandi tragedie della Calabria.</p>
+            <p data-es>Chianalea es la "pequeña Venecia de Calabria" — las casas de los pescadores están construidas directamente sobre las rocas, algunas accesibles solo en barca. Recorran Via Chianalea temprano: pescadores que regresan, redes tendidas, gatos en los botes. El Castillo Ruffo (siglos IX-X) fue reforzado por Federico II. En 1783 un terremoto devastador empujó a 2.500 habitantes a la playa buscando refugio: un tsunami los arrasó en pocos minutos — una de las mayores tragedias de Calabria.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Il nome Scilla viene dalla creatura a sei teste dell'Odissea di Omero che divorava i marinai nello Stretto — uno dei miti più antichi del Mediterraneo. Questa leggenda era così potente che ha ispirato decine di film e serie. La mitologia dello Stretto di Messina compare in <strong>Ulisse</strong> (1954) di Mario Camerini, con <strong>Kirk Douglas</strong> nel ruolo del protagonista — uno dei primi kolossal del cinema italiano del dopoguerra, girato in parte proprio in questa zona.</p>
+              <p data-es>El nombre Scilla viene de la criatura de seis cabezas de la Odisea de Homero que devoraba marineros en el Estrecho — uno de los mitos más antiguos del Mediterráneo. Esta leyenda fue tan poderosa que inspiró decenas de películas y series. La mitología del Estrecho de Messina aparece en <strong>Ulises</strong> (1954) de Mario Camerini, con <strong>Kirk Douglas</strong> en el papel principal — uno de los primeros épicos del cine italiano de posguerra, filmado en parte en esta zona.</p>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Cosa assaggiare</span><span data-es>Qué probar</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🐟 <span data-it>Pesce Spada dello Stretto</span><span data-es>Pez Espada del Estrecho</span></div>
+              <p class="cibo-desc" data-it>La pesca del pesce spada nello Stretto si pratica da oltre 3.000 anni con tecniche rimaste invariate. Cercate una friggitoria sul lungomare di Chianalea — il pesce spada fritto o in involtino è una rarità assoluta fuori da questa zona.</p>
+              <p class="cibo-desc" data-es>La pesca del pez espada en el Estrecho se practica desde hace más de 3.000 años con técnicas que no han cambiado. Busquen una friggitoria en el paseo marítimo de Chianalea — el pez espada frito o en rollitos es una rareza absoluta fuera de esta zona.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAPPA: Cefalù -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">12:30</span><span class="dur">~2h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏛️ <span data-it>Visita + Pranzo</span><span data-es>Visita + Almuerzo</span></div>
+            <div class="stop-title">Cefalù — Duomo UNESCO & Lavatoio</div>
+            <div class="stop-sub"><span data-it>Duomo ~3 € · Lavatoio gratuito</span><span data-es>Duomo ~3 € · Lavadero gratuito</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Percorso a piedi</span><span data-es>Recorrido a pie</span></div>
+            <p data-it><strong>1. Lavatoio Medievale</strong> (Via Vittorio Emanuele, gratuito) — scendete la scalinata "a lumachella" in pietra lavica. Sotto il livello della strada: 22 bocche a testa di leone fanno sgorgare acqua gelida del fiume Cefalino. All'ingresso la scritta: <em>"Più puro dell'argento, più freddo della neve."</em> Secondo la leggenda il fiume nacque dalle lacrime di una ninfa che si pentì di aver ucciso il suo amante per gelosia.<br><br><strong>2. Duomo</strong> — le due torri gemelle sembrano uguali ma non lo sono: quella sinistra (guglia ottagonale, merli ghibellini) rappresenta il potere del Re; quella destra (guglia quadrata, fiamme stilizzate) rappresenta la Chiesa. Dentro: il Cristo Pantocratore ha capelli biondi normanni, barba araba e lineamenti greci — il ritratto perfetto della Sicilia del XII sec.</p>
+            <p data-es><strong>1. Lavadero Medieval</strong> (Via Vittorio Emanuele, gratis) — bajen la escalinata "a lumachella" de piedra lávica. Bajo el nivel de la calle: 22 bocas en forma de cabeza de león hacen brotar el agua helada del río Cefalino. A la entrada la inscripción: <em>"Más puro que la plata, más frío que la nieve."</em> Según la leyenda el río nació de las lágrimas de una ninfa que se arrepintió de haber matado a su amante por celos.<br><br><strong>2. Duomo</strong> — las dos torres gemelas parecen iguales pero no lo son: la izquierda (chapitel octogonal, almenas gibelinas) representa el poder del Rey; la derecha (chapitel cuadrado, llamas estilizadas) representa la Iglesia. Dentro: el Cristo Pantocrátor tiene cabello rubio normando, barba árabe y rasgos griegos — el retrato perfecto de la Sicilia del siglo XII.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La leggenda del Duomo</span><span data-es>La leyenda del Duomo</span></div>
+            <p data-it>Ruggero II stava navigando da Salerno a Palermo quando una tempesta terribile colpì la sua nave. Spaventato, fece un voto: <em>"Se uscirò salvo dai flutti, in questo lido stesso farò costruire un Tempio."</em> La nave approdò a Cefalù. La verità storica è più interessante: Ruggero lo costruì come mausoleo di famiglia, con due sarcofagi in porfido per sé e la moglie. Ma non ci finì mai — morì nel 1154 col Duomo ancora incompiuto. Nel 1215 Federico II fece trasferire i sarcofagi a Palermo per seppellirci sé stesso. Ruggero costruì la propria tomba e qualcun altro se la prese.</p>
+            <p data-es>Ruggero II navegaba de Salerno a Palermo cuando una tormenta terrible azotó su nave. Aterrorizado, hizo un voto: <em>"Si salgo vivo de las olas, en esta orilla misma construiré un Templo."</em> La nave llegó a Cefalù. La verdad histórica es más interesante: Ruggero lo construyó como mausoleo familiar, con dos sarcófagos de pórfido para él y su esposa. Pero nunca llegó a usarlos — murió en 1154 con el Duomo aún inacabado. En 1215 Federico II trasladó los sarcófagos a Palermo para enterrarse él mismo. Ruggero construyó su propia tumba y otro rey se la quedó.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Cefalù è nel cuore di uno dei film italiani più amati al mondo: <strong><em>Nuovo Cinema Paradiso</em></strong> (1988) di <strong>Giuseppe Tornatore</strong>, Premio Oscar come Miglior Film Straniero. Tornatore è siciliano di Bagheria, a soli 20 km da qui. Il film racconta l'amore per il cinema in un piccolo paese siciliano degli anni '40-'50. Alcune scene furono girate a Cefalù e dintorni. La colonna sonora, composta da <strong>Ennio Morricone</strong>, è una delle più belle della storia del cinema. Quando siete in Piazza Duomo potete dire alla vostra compagna che state camminando negli stessi vicoli che hanno ispirato Tornatore.</p>
+              <p data-es>Cefalù está en el corazón de una de las películas italianas más amadas del mundo: <strong><em>Cinema Paradiso</em></strong> (1988) de <strong>Giuseppe Tornatore</strong>, Premio Oscar a la Mejor Película Extranjera. Tornatore es siciliano de Bagheria, a solo 20 km de aquí. La película cuenta el amor por el cine en un pequeño pueblo siciliano de los años 40-50. Algunas escenas fueron rodadas en Cefalù y sus alrededores. La banda sonora, compuesta por <strong>Ennio Morricone</strong>, es una de las más bellas de la historia del cine. Cuando estén en la Piazza Duomo pueden decirle a la compañera que caminan por los mismos callejones que inspiraron a Tornatore.</p>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Cosa mangiare</span><span data-es>Qué comer</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🐟 <span data-it>Sarde a Beccafico + Granita alla Mandorla</span><span data-es>Sardinas a la Beccafico + Granizado de Almendra</span></div>
+              <p class="cibo-desc" data-it>Le sarde a beccafico sono sarde ripiene di mollica di pane, pinoli, uvetta e aromi — dolce e salato insieme, un capolavoro della cucina povera siciliana. La granita alla mandorla con brioche è la merenda tipica: fredda, cremosa, con il profumo unico delle mandorle di Avola. Cercate una rosticceria nel centro storico.</p>
+              <p class="cibo-desc" data-es>Las sardinas a la beccafico son sardinas rellenas de miga de pan, piñones, pasas y hierbas — dulce y salado juntos, una obra maestra de la cocina siciliana humilde. El granizado de almendra con brioche es la merienda típica: frío, cremoso, con el perfume único de las almendras de Avola. Busquen una rosticceria en el centro histórico.</p>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🍴 <span data-it>Dove mangiare</span><span data-es>Dónde comer</span></div>
+            <div class="ristoranti">
+              <div class="rist-item">
+                <div class="rist-num">1</div>
+                <div>
+                  <div class="rist-name">Antares — <span data-it>Lungomare</span><span data-es>Paseo Marítimo</span></div>
+                  <div class="rist-desc" data-it>Pranzo veloce tipico. 4,0/5 con 1.533 recensioni TripAdvisor. Cucina siciliana, economico, tavoli all'aperto sul lungomare. Ideale per la vostra sosta breve.</div>
+                  <div class="rist-desc" data-es>Almuerzo rápido típico. 4,0/5 con 1.533 reseñas en TripAdvisor. Cocina siciliana, económico, mesas al aire libre en el paseo marítimo. Ideal para su parada breve.</div>
+                </div>
+              </div>
+              <div class="rist-item">
+                <div class="rist-num">2</div>
+                <div>
+                  <div class="rist-name">Trattoria Chian'a Chiesa</div>
+                  <div class="rist-desc" data-it>Piazza Sant'Ambrogio. Trattoria vera, non per turisti. Cucina di pesce siciliana autentica. Tel: 327 594 6051.</div>
+                  <div class="rist-desc" data-es>Piazza Sant'Ambrogio. Trattoria de verdad, no para turistas. Cocina de pescado siciliana auténtica. Tel: 327 594 6051.</div>
+                </div>
+              </div>
+              <div class="rist-item">
+                <div class="rist-num">3</div>
+                <div>
+                  <div class="rist-name">Al Faro — Via della Giudecca</div>
+                  <div class="rist-desc" data-it>Terrazza panoramica vicino al faro. Polpo, pesce fresco, cucina mediterranea. Prezzi medi 30 €. Se avete più tempo è la scelta migliore.</div>
+                  <div class="rist-desc" data-es>Terraza panorámica cerca del faro. Pulpo, pescado fresco, cocina mediterránea. Precio medio 30 €. Si tienen más tiempo es la mejor opción.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAPPA: Arrivo Palermo -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">16:30</span><span class="dur"><span data-it>serata</span><span data-es>noche</span></span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏨 Check-in</div>
+            <div class="stop-title">Palermo — Hotel San Paolo Palace</div>
+            <div class="stop-sub"><span data-it>Piscina 14° piano · Cena libera</span><span data-es>Piscina piso 14 · Cena libre</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">🌆 <span data-it>La serata</span><span data-es>La noche</span></div>
+            <p data-it>Check-in, bagno in piscina panoramica al 14° piano (vista mare mozzafiato), doccia e relax. Per la cena andate al Mercato Ballarò o alla Vucciria — i mercati serali di Palermo sono tra i più vivi d'Italia. Mangiate per strada: arancine, panelle, pane ca' meusa (pane con milza — molto tipico, molto coraggioso).</p>
+            <p data-es>Check-in, baño en la piscina panorámica del piso 14 (vista al mar espectacular), ducha y relax. Para cenar vayan al Mercato Ballarò o la Vucciria — los mercados nocturnos de Palermo son de los más animados de Italia. Coman en la calle: arancine, panelle, pane ca' meusa (pan con bazo — muy típico, muy atrevido).</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📋 <span data-it>Prenotazione</span><span data-es>Reserva</span></div>
+            <div class="preno-box">
+              <div class="preno-row"><div class="preno-ico">📱</div><div class="preno-val"><strong>Agoda</strong> · psnfri@hotmail.com · <span data-it>Menu</span><span data-es>Menú</span> "I MIEI VIAGGI"</div></div>
+              <div class="preno-row"><div class="preno-ico">💳</div><div class="preno-val"><span data-it>Carta</span><span data-es>Tarjeta</span> Hype · 156,12 € <span data-it>addebitati il</span><span data-es>cobrados el</span> 22/06 · 8 € <span data-it>in struttura</span><span data-es>en el hotel</span></div></div>
+              <div class="preno-row"><div class="preno-ico">📧</div><div class="preno-val"><span data-it>Conferma in INBOX</span><span data-es>Confirmación en INBOX</span> psnfri@hotmail.com</div></div>
+              <div class="preno-row"><div class="preno-ico">⚠️</div><div class="preno-val preno-warn"><span data-it>Disdetta gratuita entro</span><span data-es>Cancelación gratis hasta</span> <strong>24/06 ore 23:59</strong></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /day0 -->
+
+    <!-- ═══ GIORNI 2-8 — placeholder con info base ═══ -->
+    <div class="day-panel" id="day1">
+      <div class="day-hero">
+        <div class="day-badge">📅 28 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 2</div>
+        <h2 data-it>Palermo — Cappella Palatina & Mondello</h2>
+        <h2 data-es>Palermo — Capilla Palatina & Mondello</h2>
+        <div class="day-route">
+          <span data-it>Palazzo Normanni · Mercato Ballarò · Spiaggia Mondello</span>
+          <span data-es>Palacio Normando · Mercado Ballarò · Playa Mondello</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
+          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">San Paolo</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">
+        🏗️ <span data-it>Contenuti in preparazione…<br><span style="font-size:11px">Cappella Palatina · Ballarò · Mondello</span></span>
+        <span data-es>Contenido en preparación…<br><span style="font-size:11px">Capilla Palatina · Ballarò · Mondello</span></span>
+      </div>
+    </div>
+
+    <div class="day-panel" id="day2">
+      <div class="day-hero">
+        <div class="day-badge">📅 29 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 3</div>
+        <h2 data-it>Castellammare · Scopello · San Vito Lo Capo</h2>
+        <h2 data-es>Castellammare · Scopello · San Vito Lo Capo</h2>
+        <div class="day-route">
+          <span data-it>Borghi costieri → Trasferta a Valderice (La Tonnara)</span>
+          <span data-es>Pueblos costeros → Traslado a Valderice (La Tonnara)</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~190 km</span><span class="stat-lbl"><span data-it>Percorso</span><span data-es>Ruta</span></span></div>
+          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">La Tonnara</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+    <div class="day-panel" id="day3">
+      <div class="day-hero">
+        <div class="day-badge">📅 30 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 4</div>
+        <h2 data-it>Segesta & Riserva dello Zingaro</h2>
+        <h2 data-es>Segesta & Reserva Natural dello Zingaro</h2>
+        <div class="day-route">
+          <span data-it>Tempio greco V sec. a.C. · Calette per snorkeling</span>
+          <span data-es>Templo griego siglo V a.C. · Calas para snorkel</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~2h</span><span class="stat-lbl"><span data-it>Archeologia</span><span data-es>Arqueología</span></span></div>
+          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">La Tonnara</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+    <div class="day-panel" id="day4">
+      <div class="day-hero">
+        <div class="day-badge">📅 1 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 5</div>
+        <h2 data-it>Isole Egadi in barca</h2>
+        <h2 data-es>Islas Egadi en barco</h2>
+        <div class="day-route">
+          <span data-it>Favignana · Levanzo · Marettimo · Porto Trapani</span>
+          <span data-es>Favignana · Levanzo · Marettimo · Puerto Trápani</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~8h</span><span class="stat-lbl"><span data-it>In barca</span><span data-es>En barco</span></span></div>
+          <div class="stat"><span class="stat-val">50-70 €</span><span class="stat-lbl"><span data-it>A persona</span><span data-es>Por persona</span></span></div>
+          <div class="stat"><span class="stat-val">La Tonnara</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+    <div class="day-panel" id="day5">
+      <div class="day-hero">
+        <div class="day-badge">📅 2 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 6</div>
+        <h2 data-it>Mazara del Vallo & Saline di Mozia</h2>
+        <h2 data-es>Mazara del Vallo & Salinas de Mozia</h2>
+        <div class="day-route">
+          <span data-it>Kasbah araba · Isola fenicia · Trasferta Sciacca</span>
+          <span data-es>Kasbah árabe · Isla fenicia · Traslado a Sciacca</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~4h30</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
+          <div class="stat"><span class="stat-val">Villa Cal.</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+    <div class="day-panel" id="day6">
+      <div class="day-hero">
+        <div class="day-badge">📅 3 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 7</div>
+        <h2 data-it>Sciacca · Selinunte · Eraclea Minoa</h2>
+        <h2 data-es>Sciacca · Selinunte · Eraclea Minoa</h2>
+        <div class="day-route">
+          <span data-it>Centro medievale · Templi greci · Scogliere bianche</span>
+          <span data-es>Centro medieval · Templos griegos · Acantilados blancos</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~4h30</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
+          <div class="stat"><span class="stat-val">~2h30</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">Villa Cal.</span><span class="stat-lbl">Hotel</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+    <div class="day-panel" id="day7">
+      <div class="day-hero">
+        <div class="day-badge">📅 4 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 8</div>
+        <h2 data-it>Ritorno — Tropea & Pizzo Calabro</h2>
+        <h2 data-es>Regreso — Tropea & Pizzo Calabro</h2>
+        <div class="day-route">
+          <span data-it>Traghetto Messina · Tropea pranzo · Pizzo tartufo gelato</span>
+          <span data-es>Ferry Messina · Almuerzo Tropea · Pizzo helado tartufo</span>
+        </div>
+        <div class="day-stats">
+          <div class="stat"><span class="stat-val">~7h</span><span class="stat-lbl"><span data-it>Guida</span><span data-es>Manejo</span></span></div>
+          <div class="stat"><span class="stat-val">~19:30</span><span class="stat-lbl"><span data-it>Arrivo</span><span data-es>Llegada</span></span></div>
+        </div>
+      </div>
+      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
+    </div>
+
+  </div><!-- /app-content -->
+
+  <!-- Audio bar -->
+  <div class="audio-bar">
+    <button class="audio-play-btn" id="audioBtn" onclick="toggleAudio()">▶</button>
+    <div class="audio-info">
+      <div class="audio-title" id="audioTitle">
+        <span data-it>Guida audio — Cefalù: il Duomo di Ruggero II</span>
+        <span data-es>Guía audio — Cefalù: el Duomo de Ruggero II</span>
+      </div>
+      <div class="audio-sub" id="audioSub">
+        <span data-it>Giorno 1 · ~3 min di lettura</span>
+        <span data-es>Día 1 · ~3 min de lectura</span>
+      </div>
+      <div class="audio-prog-wrap" onclick="seekAudio(event)">
+        <div class="audio-prog" id="audioProgress"></div>
+      </div>
+    </div>
+    <button class="audio-read-btn" onclick="readAloud()">
+      <span data-it>🔊 Leggi</span>
+      <span data-es>🔊 Leer</span>
+    </button>
+  </div>
+
+</div><!-- /app -->
+
+<script>
+// ════ LINGUA ════
+let currentLang = 'it';
+function setLang(lang){
+  currentLang = lang;
+  document.body.classList.toggle('es', lang === 'es');
+  document.querySelectorAll('.lang-btn').forEach((b,i)=>{
+    b.classList.toggle('active', (i===0&&lang==='it')||(i===1&&lang==='es'));
+  });
+  localStorage.setItem('lang', lang);
+}
+// Ripristina lingua salvata
+const savedLang = localStorage.getItem('lang');
+if(savedLang) setLang(savedLang);
+
+// ════ INTRO ════
+const dots = document.querySelectorAll('.tl-dot');
+const dotTimes = [2200,2600,3000,3400,3800,4200,4600,5000];
+dotTimes.forEach((t,i)=>{
+  setTimeout(()=>{ if(dots[i]) dots[i].classList.add('lit'); }, t);
+});
+
+// Nascondi intro dopo 10s
+setTimeout(()=>{
+  const intro = document.getElementById('intro');
+  intro.classList.add('intro-hidden');
+  setTimeout(()=>{
+    intro.style.display='none';
+    document.getElementById('app').classList.add('visible');
+  }, 700);
+}, 10000);
+
+// ════ NAVIGAZIONE ════
+function showDay(idx){
+  document.querySelectorAll('.day-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+  document.querySelectorAll('.day-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelector('.app-content').scrollTop = 0;
+  window.scrollTo(0,0);
+}
+
+// ════ TOGGLE CARD ════
+function toggleStop(card){
+  card.classList.toggle('expanded');
+}
+
+// ════ AUDIO (Web Speech API) ════
+let speaking = false;
+let utterance = null;
+let progress = 0;
+let progressInterval = null;
+
+const audioTexts = {
+  it: `Cefalù. Il Duomo di Ruggero II. 
+   Siamo nella piazza principale di Cefalù, davanti a uno dei capolavori del romanico normanno.
+   Ruggero II cominciò a costruirlo nel 1131, secondo la leggenda dopo aver fatto voto di costruire una chiesa se fosse scampato a una tempesta in mare.
+   Le due torri che vedete non sono uguali: quella di sinistra con la guglia ottagonale rappresenta il potere del Re; quella di destra con le fiamme stilizzate rappresenta il potere della Chiesa.
+   Dentro, il Cristo Pantocratore nell'abside ha capelli biondi normanni, barba araba e lineamenti greci: è il ritratto della Sicilia del dodicesimo secolo, tre culture fuse in un solo volto divino.
+   Curiosità cinematografica: Giuseppe Tornatore, il regista di Cinema Paradiso, vincitore dell'Oscar come miglior film straniero nel 1989, è nato a Bagheria, a soli venti chilometri da qui. Alcune scene del film furono girate in questi vicoli. Quando siete in questa piazza, state camminando negli stessi luoghi che hanno ispirato uno dei film italiani più amati al mondo.`,
+  es: `Cefalù. El Duomo de Ruggero II.
+   Estamos en la plaza principal de Cefalù, frente a una de las obras maestras del románico normando.
+   Ruggero II comenzó a construirlo en el año 1131, según la leyenda después de haber hecho un voto de construir una iglesia si sobrevivía a una tormenta en el mar.
+   Las dos torres que ven no son iguales: la de la izquierda con el chapitel octogonal representa el poder del Rey; la de la derecha con las llamas estilizadas representa el poder de la Iglesia.
+   Dentro, el Cristo Pantocrátor en el ábside tiene cabello rubio normando, barba árabe y rasgos griegos: es el retrato de la Sicilia del siglo doce, tres culturas fundidas en un solo rostro divino.
+   Curiosidad cinematográfica: Giuseppe Tornatore, el director de Cinema Paradiso, ganador del Oscar a la mejor película extranjera en 1989, nació en Bagheria, a solo veinte kilómetros de aquí. Algunas escenas de la película fueron rodadas en estos callejones. Cuando estén en esta plaza, están caminando por los mismos lugares que inspiraron una de las películas italianas más amadas del mundo.`
+};
+
+function toggleAudio(){
+  if(!('speechSynthesis' in window)){
+    alert(currentLang==='it'?'Audio non supportato su questo browser.':'Audio no soportado en este navegador.');
+    return;
+  }
+  if(speaking){
+    window.speechSynthesis.cancel();
+    speaking = false;
+    document.getElementById('audioBtn').textContent = '▶';
+    clearInterval(progressInterval);
+    return;
+  }
+  readAloud();
+}
+
+function readAloud(){
+  if(!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+
+  const text = audioTexts[currentLang];
+  utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = currentLang === 'it' ? 'it-IT' : 'es-ES';
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+
+  const dur = text.length * 60; // ms approssimato
+  progress = 0;
+
+  utterance.onstart = ()=>{
+    speaking = true;
+    document.getElementById('audioBtn').textContent = '⏸';
+    progressInterval = setInterval(()=>{
+      progress = Math.min(progress + (100/(dur/100)), 98);
+      document.getElementById('audioProgress').style.width = progress + '%';
+    }, 100);
+  };
+
+  utterance.onend = ()=>{
+    speaking = false;
+    document.getElementById('audioBtn').textContent = '▶';
+    document.getElementById('audioProgress').style.width = '100%';
+    clearInterval(progressInterval);
+    setTimeout(()=>{ document.getElementById('audioProgress').style.width = '0%'; }, 2000);
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function seekAudio(e){
+  const rect = e.currentTarget.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width * 100;
+  document.getElementById('audioProgress').style.width = pct + '%';
+}
+
+// ════ Se in iframe (preview Claude) salta intro ════
+if(window.self !== window.top){
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('app').classList.add('visible');
+}
+</script>
+</body>
+</html>
