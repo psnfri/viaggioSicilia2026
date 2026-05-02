@@ -404,6 +404,41 @@ body:not(.es) span[data-es]{display:none!important}
   .tl-label{font-size:7px}
   .intro-title{font-size:28px}
 }
+
+/* ════ FOTO ════ */
+.photo-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:10px 0}
+.photo-gallery.single{grid-template-columns:1fr}
+.photo-gallery.triple{grid-template-columns:repeat(3,1fr)}
+.photo-item{position:relative;border-radius:10px;overflow:hidden;background:rgba(255,255,255,0.05)}
+.photo-item img{width:100%;height:110px;object-fit:cover;display:block;transition:transform 0.3s}
+.photo-item:hover img{transform:scale(1.04)}
+.photo-item .photo-cap{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.7));
+  padding:20px 8px 6px;font-size:9px;color:rgba(255,255,255,0.8);
+  letter-spacing:0.5px;
+}
+.photo-item.tall img{height:160px}
+.photo-hero{border-radius:14px;overflow:hidden;margin:10px 0;position:relative}
+.photo-hero img{width:100%;height:180px;object-fit:cover;display:block}
+.photo-hero .photo-cap{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  padding:30px 12px 10px;font-size:10px;color:rgba(255,255,255,0.85);
+  letter-spacing:0.5px;
+}
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}
+.food-item{border-radius:10px;overflow:hidden;position:relative;background:rgba(255,255,255,0.05)}
+.food-item img{width:100%;height:90px;object-fit:cover;display:block;transition:transform 0.3s}
+.food-item:hover img{transform:scale(1.05)}
+.food-item .food-name{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.8));
+  padding:16px 8px 6px;font-size:9px;color:rgba(255,255,255,0.9);
+  font-weight:500;letter-spacing:0.5px;
+}
+.rist-item img{width:44px;height:44px;object-fit:cover;border-radius:8px;flex-shrink:0}
+
 </style>
 </head>
 <body>
@@ -636,6 +671,29 @@ body:not(.es) span[data-es]{display:none!important}
             <p data-es><strong>1. Lavadero Medieval</strong> (Via Vittorio Emanuele, gratis) — bajen la escalinata "a lumachella" de piedra lávica. Bajo el nivel de la calle: 22 bocas en forma de cabeza de león hacen brotar el agua helada del río Cefalino. A la entrada la inscripción: <em>"Más puro que la plata, más frío que la nieve."</em> Según la leyenda el río nació de las lágrimas de una ninfa que se arrepintió de haber matado a su amante por celos.<br><br><strong>2. Duomo</strong> — las dos torres gemelas parecen iguales pero no lo son: la izquierda (chapitel octogonal, almenas gibelinas) representa el poder del Rey; la derecha (chapitel cuadrado, llamas estilizadas) representa la Iglesia. Dentro: el Cristo Pantocrátor tiene cabello rubio normando, barba árabe y rasgos griegos — el retrato perfecto de la Sicilia del siglo XII.</p>
           </div>
 
+
+            <div class="dsec">
+              <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+              <div class="photo-hero">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cefalu_Duomo.jpg/800px-Cefalu_Duomo.jpg" alt="Duomo di Cefalù" loading="lazy" onerror="this.style.display='none'">
+                <div class="photo-cap">Duomo di Cefalù — facciata normanna UNESCO · XII sec.</div>
+              </div>
+              <div class="photo-gallery triple" style="margin-top:6px">
+                <div class="photo-item">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cefalù_-_Lavatoio.jpg/400px-Cefalù_-_Lavatoio.jpg" alt="Lavatoio medievale" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <div class="photo-cap">Lavatoio medievale</div>
+                </div>
+                <div class="photo-item">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cefalù_BW_2012-10-05_11-05-44.jpg/400px-Cefalù_BW_2012-10-05_11-05-44.jpg" alt="Cristo Pantocratore" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <div class="photo-cap">Cristo Pantocratore</div>
+                </div>
+                <div class="photo-item">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cefalù_harbor.jpg/400px-Cefalù_harbor.jpg" alt="Porto di Cefalù" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <div class="photo-cap">Porto di Cefalù</div>
+                </div>
+              </div>
+            </div>
+
           <div class="dsec">
             <div class="dsec-head">📖 <span data-it>La leggenda del Duomo</span><span data-es>La leyenda del Duomo</span></div>
             <p data-it>Ruggero II stava navigando da Salerno a Palermo quando una tempesta terribile colpì la sua nave. Spaventato, fece un voto: <em>"Se uscirò salvo dai flutti, in questo lido stesso farò costruire un Tempio."</em> La nave approdò a Cefalù. La verità storica è più interessante: Ruggero lo costruì come mausoleo di famiglia, con due sarcofagi in porfido per sé e la moglie. Ma non ci finì mai — morì nel 1154 col Duomo ancora incompiuto. Nel 1215 Federico II fece trasferire i sarcofagi a Palermo per seppellirci sé stesso. Ruggero costruì la propria tomba e qualcun altro se la prese.</p>
@@ -657,6 +715,18 @@ body:not(.es) span[data-es]{display:none!important}
               <div class="cibo-name">🐟 <span data-it>Sarde a Beccafico + Granita alla Mandorla</span><span data-es>Sardinas a la Beccafico + Granizado de Almendra</span></div>
               <p class="cibo-desc" data-it>Le sarde a beccafico sono sarde ripiene di mollica di pane, pinoli, uvetta e aromi — dolce e salato insieme, un capolavoro della cucina povera siciliana. La granita alla mandorla con brioche è la merenda tipica: fredda, cremosa, con il profumo unico delle mandorle di Avola. Cercate una rosticceria nel centro storico.</p>
               <p class="cibo-desc" data-es>Las sardinas a la beccafico son sardinas rellenas de miga de pan, piñones, pasas y hierbas — dulce y salado juntos, una obra maestra de la cocina siciliana humilde. El granizado de almendra con brioche es la merienda típica: frío, cremoso, con el perfume único de las almendras de Avola. Busquen una rosticceria en el centro histórico.</p>
+
+              <div class="food-grid">
+                <div class="food-item">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sarde_a_beccafico.jpg/400px-Sarde_a_beccafico.jpg" alt="Sarde a Beccafico" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <div class="food-name">Sarde a Beccafico</div>
+                </div>
+                <div class="food-item">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Granita_siciliana.jpg/400px-Granita_siciliana.jpg" alt="Granita alla mandorla" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <div class="food-name">Granita alla Mandorla</div>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -721,6 +791,79 @@ body:not(.es) span[data-es]{display:none!important}
           </div>
         </div>
       </div>
+
+
+    <!-- Sezione fissa ristoranti giorno 1 -->
+    <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+      <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+        🍽️ <span data-it>DOVE MANGIARE — Giorno 1</span><span data-es>DÓNDE COMER — Día 1</span>
+        <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <div style="font-size:9px;letter-spacing:1px;color:rgba(245,239,224,0.4);text-transform:uppercase;margin-bottom:6px">
+          ☕ <span data-it>Colazione autostrada (~06:00)</span><span data-es>Desayuno autopista (~06:00)</span>
+        </div>
+        <div style="font-size:12px;color:rgba(245,239,224,0.7)" data-it>Autogrill sull'A3 — area Buonabitacolo o Lauria Nord. Caffè e cornetto al volo.</div>
+        <div style="font-size:12px;color:rgba(245,239,224,0.7)" data-es>Autogrill en la A3 — área Buonabitacolo o Lauria Nord. Café y brioche rápido.</div>
+      </div>
+
+      <div style="margin-bottom:10px">
+        <div style="font-size:9px;letter-spacing:1px;color:rgba(245,239,224,0.4);text-transform:uppercase;margin-bottom:6px">
+          🥗 <span data-it>Pranzo — Cefalù (~13:00-14:00)</span><span data-es>Almuerzo — Cefalù (~13:00-14:00)</span>
+        </div>
+        <div class="ristoranti">
+          <div class="rist-item">
+            <div class="rist-num">1</div>
+            <div>
+              <div class="rist-name">Antares — Lungomare</div>
+              <div class="rist-desc" data-it>Tavoli all'aperto, cucina siciliana. 4,0/5 · 1.533 rec. TripAdvisor. Economico. <em>La scelta rapida ideale.</em></div>
+              <div class="rist-desc" data-es>Mesas al aire libre, cocina siciliana. 4,0/5 · 1.533 reseñas TripAdvisor. Económico. <em>La opción rápida ideal.</em></div>
+            </div>
+          </div>
+          <div class="rist-item">
+            <div class="rist-num">2</div>
+            <div>
+              <div class="rist-name">Trattoria Chian'a Chiesa</div>
+              <div class="rist-desc" data-it>Piazza Sant'Ambrogio · Tel: 327 594 6051 · Pesce siciliano autentico. <em>Se avete più tempo.</em></div>
+              <div class="rist-desc" data-es>Piazza Sant'Ambrogio · Tel: 327 594 6051 · Pescado siciliano auténtico. <em>Si tienen más tiempo.</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:9px;letter-spacing:1px;color:rgba(245,239,224,0.4);text-transform:uppercase;margin-bottom:6px">
+          🌙 <span data-it>Cena — Palermo (~20:00)</span><span data-es>Cena — Palermo (~20:00)</span>
+        </div>
+        <div class="ristoranti">
+          <div class="rist-item">
+            <div class="rist-num">1</div>
+            <div>
+              <div class="rist-name">Mercato Ballarò <span data-it>(street food)</span><span data-es>(comida callejera)</span></div>
+              <div class="rist-desc" data-it>Il mercato serale più vivo di Palermo. Arancine, panelle, stigghiola, pane ca' meusa. Prezzi bassissimi, atmosfera unica. <em>Imperdibile la prima sera.</em></div>
+              <div class="rist-desc" data-es>El mercado nocturno más animado de Palermo. Arancine, panelle, stigghiola, pane ca' meusa. Precios muy bajos, ambiente único. <em>Imprescindible la primera noche.</em></div>
+            </div>
+          </div>
+          <div class="rist-item">
+            <div class="rist-num">2</div>
+            <div>
+              <div class="rist-name">Trattoria Ferro di Cavallo</div>
+              <div class="rist-desc" data-it>Via Venezia 20, Palermo. Trattoria storica, cucina palermitana classica, prezzi onesti. Prenotare se possibile. <em>Per una cena seduta.</em></div>
+              <div class="rist-desc" data-es>Via Venezia 20, Palermo. Trattoria histórica, cocina palermitana clásica, precios honestos. Reservar si es posible. <em>Para una cena sentados.</em></div>
+            </div>
+          </div>
+          <div class="rist-item">
+            <div class="rist-num">3</div>
+            <div>
+              <div class="rist-name">Osteria dei Vespri</div>
+              <div class="rist-desc" data-it>Piazza Croce dei Vespri 6. Cucina siciliana raffinata in palazzo storico. Ottimo per cena romantica. ~35 € a persona.</div>
+              <div class="rist-desc" data-es>Piazza Croce dei Vespri 6. Cocina siciliana refinada en palacio histórico. Perfecta para cena romántica. ~35 € por persona.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </div><!-- /day0 -->
 
