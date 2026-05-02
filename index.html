@@ -439,6 +439,19 @@ body:not(.es) span[data-es]{display:none!important}
 }
 .rist-item img{width:44px;height:44px;object-fit:cover;border-radius:8px;flex-shrink:0}
 
+
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:72vh;object-fit:contain;border-radius:10px}
+.lb-cap{color:#fff;font-size:13px;margin-top:12px;text-align:center;opacity:0.8;max-width:340px;line-height:1.5}
+.lb-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000}
+.lb-close:hover{background:rgba(255,255,255,0.25)}
+.lb-nav{display:flex;gap:10px;margin-top:14px}
+.lb-nav button{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif}
+.lb-nav button:hover{background:rgba(255,255,255,0.22)}
+.lb-counter{color:rgba(255,255,255,0.4);font-size:11px;margin-top:8px;letter-spacing:1px}
+.photo-item{cursor:pointer}
+.photo-hero{cursor:pointer}
 </style>
 </head>
 <body>
@@ -674,21 +687,21 @@ body:not(.es) span[data-es]{display:none!important}
 
             <div class="dsec">
               <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
-              <div class="photo-hero">
+              <div class="photo-hero" onclick="openLb(0)" title="Tocca per ingrandire">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cefalu_Duomo.jpg/800px-Cefalu_Duomo.jpg" alt="Duomo di Cefalù" loading="lazy" onerror="this.style.display='none'">
                 <div class="photo-cap">Duomo di Cefalù — facciata normanna UNESCO · XII sec.</div>
               </div>
               <div class="photo-gallery triple" style="margin-top:6px">
                 <div class="photo-item">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cefalù_-_Lavatoio.jpg/400px-Cefalù_-_Lavatoio.jpg" alt="Lavatoio medievale" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cefalù_-_Lavatoio.jpg/400px-Cefalù_-_Lavatoio.jpg" alt="Lavatoio medievale" onclick="openLb(1)" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Lavatoio medievale</div>
                 </div>
                 <div class="photo-item">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cefalù_BW_2012-10-05_11-05-44.jpg/400px-Cefalù_BW_2012-10-05_11-05-44.jpg" alt="Cristo Pantocratore" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cefalù_BW_2012-10-05_11-05-44.jpg/400px-Cefalù_BW_2012-10-05_11-05-44.jpg" alt="Cristo Pantocratore" onclick="openLb(2)" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Cristo Pantocratore</div>
                 </div>
                 <div class="photo-item">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cefalù_harbor.jpg/400px-Cefalù_harbor.jpg" alt="Porto di Cefalù" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cefalù_harbor.jpg/400px-Cefalù_harbor.jpg" alt="Porto di Cefalù" onclick="openLb(3)" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Porto di Cefalù</div>
                 </div>
               </div>
@@ -718,11 +731,11 @@ body:not(.es) span[data-es]{display:none!important}
 
               <div class="food-grid">
                 <div class="food-item">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sarde_a_beccafico.jpg/400px-Sarde_a_beccafico.jpg" alt="Sarde a Beccafico" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sarde_a_beccafico.jpg/400px-Sarde_a_beccafico.jpg" alt="Sarde a Beccafico" onclick="openLb(4)" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="food-name">Sarde a Beccafico</div>
                 </div>
                 <div class="food-item">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Granita_siciliana.jpg/400px-Granita_siciliana.jpg" alt="Granita alla mandorla" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Granita_siciliana.jpg/400px-Granita_siciliana.jpg" alt="Granita alla mandorla" onclick="openLb(5)" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="food-name">Granita alla Mandorla</div>
                 </div>
               </div>
@@ -1141,11 +1154,68 @@ function seekAudio(e){
   document.getElementById('audioProgress').style.width = pct + '%';
 }
 
+
+// ════ LIGHTBOX ════
+const lbPhotos = [
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cefalu_Duomo.jpg/800px-Cefalu_Duomo.jpg", cap:"Duomo di Cefalù — facciata normanna UNESCO, XII sec."},
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cefalù_-_Lavatoio.jpg/800px-Cefalù_-_Lavatoio.jpg", cap:"Lavatoio medievale — le 22 bocche a testa di leone"},
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cefalù_BW_2012-10-05_11-05-44.jpg/800px-Cefalù_BW_2012-10-05_11-05-44.jpg", cap:"Cristo Pantocratore — mosaico bizantino del 1145"},
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Cefalù_harbor.jpg/800px-Cefalù_harbor.jpg", cap:"Porto di Cefalù — barche dei pescatori"},
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Sarde_a_beccafico.jpg/400px-Sarde_a_beccafico.jpg", cap:"Sarde a Beccafico — piatto tipico siciliano"},
+  {src:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Granita_siciliana.jpg/400px-Granita_siciliana.jpg", cap:"Granita alla mandorla — colazione siciliana per eccellenza"},
+];
+let lbCur = 0;
+const lbEl = document.getElementById('lb');
+const lbImg = document.getElementById('lb-img');
+const lbCap = document.getElementById('lb-cap');
+const lbCounter = document.getElementById('lb-counter');
+
+function openLb(i){
+  lbCur = i;
+  lbShow();
+  lbEl.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb(){
+  lbEl.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLbBg(e){ if(e.target === lbEl) closeLb(); }
+function navLb(d){
+  lbCur = (lbCur + d + lbPhotos.length) % lbPhotos.length;
+  lbShow();
+}
+function lbShow(){
+  const p = lbPhotos[lbCur];
+  lbImg.src = p.src;
+  lbImg.alt = p.cap;
+  lbCap.textContent = p.cap;
+  lbCounter.textContent = (lbCur+1) + ' / ' + lbPhotos.length;
+}
+document.addEventListener('keydown', e=>{
+  if(!lbEl.classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowRight') navLb(1);
+  if(e.key==='ArrowLeft') navLb(-1);
+});
+
 // ════ Se in iframe (preview Claude) salta intro ════
 if(window.self !== window.top){
   document.getElementById('intro').style.display = 'none';
   document.getElementById('app').classList.add('visible');
 }
 </script>
+
+<div class="lb" id="lb" onclick="closeLbBg(event)">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+  <div class="lb-nav">
+    <button onclick="navLb(-1)">← <span data-it>Prec.</span><span data-es>Ant.</span></button>
+    <button onclick="navLb(1)"><span data-it>Succ.</span><span data-es>Sig.</span> →</button>
+  </div>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
 </body>
 </html>
