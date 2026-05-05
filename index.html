@@ -440,16 +440,11 @@ body:not(.es) span[data-es]{display:none!important}
 .rist-item img{width:44px;height:44px;object-fit:cover;border-radius:8px;flex-shrink:0}
 
 
-.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;flex-direction:column;align-items:center;justify-content:center;padding:20px}
-.lb.open{display:flex}
-.lb img{max-width:100%;max-height:72vh;object-fit:contain;border-radius:10px}
-.lb-cap{color:#fff;font-size:13px;margin-top:12px;text-align:center;opacity:0.8;max-width:340px;line-height:1.5}
-.lb-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:#fff;width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000}
-.lb-close:hover{background:rgba(255,255,255,0.25)}
-.lb-nav{display:flex;gap:10px;margin-top:14px}
-.lb-nav button{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif}
-.lb-nav button:hover{background:rgba(255,255,255,0.22)}
-.lb-counter{color:rgba(255,255,255,0.4);font-size:11px;margin-top:8px;letter-spacing:1px}
+#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+#lb.open{display:flex}
+#lb>img{max-width:100%;max-height:72vh;object-fit:contain;border-radius:10px}
+#lb-cap{color:#ccc;font-size:13px;margin-top:12px;text-align:center}
+#lb-close{margin-top:16px;background:#C9A84C;border:none;color:#111;padding:10px 24px;border-radius:20px;font-size:14px;cursor:pointer}
 .photo-item{cursor:pointer}
 .photo-hero{cursor:pointer}
 </style>
@@ -687,21 +682,21 @@ body:not(.es) span[data-es]{display:none!important}
 
             <div class="dsec">
               <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
-              <div class="photo-hero" onclick="openLb(0)" title="Tocca per ingrandire">
+              <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800','Duomo di Cefalù — facciata normanna UNESCO, XII sec.')" title="Tocca per ingrandire">
                 <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=85&fit=crop" alt="Duomo di Cefalù" loading="lazy" onerror="this.style.display='none'">
                 <div class="photo-cap">Duomo di Cefalù — facciata normanna UNESCO · XII sec.</div>
               </div>
               <div class="photo-gallery triple" style="margin-top:6px">
                 <div class="photo-item">
-                  <img src="https://images.unsplash.com/photo-1597657135822-ed6aef9b4388?w=400&q=80&fit=crop" alt="Lavatoio medievale" onclick="openLb(1)" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://images.unsplash.com/photo-1597657135822-ed6aef9b4388?w=400&q=80&fit=crop" alt="Lavatoio medievale" onclick="apriLb('https://images.unsplash.com/photo-1597657135822-ed6aef9b4388?w=800','Lavatoio medievale — le 22 bocche a testa di leone')" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Lavatoio medievale</div>
                 </div>
                 <div class="photo-item">
-                  <img src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=400&q=80&fit=crop" alt="Cristo Pantocratore" onclick="openLb(2)" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=400&q=80&fit=crop" alt="Cristo Pantocratore" onclick="apriLb('https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=800','Cristo Pantocratore — mosaico bizantino del 1145')" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Cristo Pantocratore</div>
                 </div>
                 <div class="photo-item">
-                  <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=400&q=80&fit=crop" alt="Porto di Cefalù" onclick="openLb(3)" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=400&q=80&fit=crop" alt="Porto di Cefalù" onclick="apriLb('https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800','Porto di Cefalù — barche dei pescatori')" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="photo-cap">Porto di Cefalù</div>
                 </div>
               </div>
@@ -731,11 +726,11 @@ body:not(.es) span[data-es]{display:none!important}
 
               <div class="food-grid">
                 <div class="food-item">
-                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80&fit=crop" alt="Sarde a Beccafico" onclick="openLb(4)" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80&fit=crop" alt="Sarde a Beccafico" onclick="apriLb('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800','Sarde a Beccafico — piatto tipico siciliano')" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="food-name">Sarde a Beccafico</div>
                 </div>
                 <div class="food-item">
-                  <img src="https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=400&q=80&fit=crop" alt="Granita alla mandorla" onclick="openLb(5)" loading="lazy" onerror="this.parentElement.style.display='none'">
+                  <img src="https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=400&q=80&fit=crop" alt="Granita alla mandorla" onclick="apriLb('https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=800','Granita alla mandorla — colazione siciliana')" loading="lazy" onerror="this.parentElement.style.display='none'">
                   <div class="food-name">Granita alla Mandorla</div>
                 </div>
               </div>
@@ -881,26 +876,190 @@ body:not(.es) span[data-es]{display:none!important}
     </div><!-- /day0 -->
 
     <!-- ═══ GIORNI 2-8 — placeholder con info base ═══ -->
+    
+    <!-- ═══ GIORNO 2 ═══ -->
     <div class="day-panel" id="day1">
       <div class="day-hero">
         <div class="day-badge">📅 28 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 2</div>
         <h2 data-it>Palermo — Cappella Palatina & Mondello</h2>
         <h2 data-es>Palermo — Capilla Palatina & Mondello</h2>
         <div class="day-route">
-          <span data-it>Palazzo Normanni · Mercato Ballarò · Spiaggia Mondello</span>
-          <span data-es>Palacio Normando · Mercado Ballarò · Playa Mondello</span>
+          <span data-it>Palazzo Normanni · Quattro Canti · Mercato Ballarò · Mondello</span>
+          <span data-es>Palacio Normando · Quattro Canti · Mercado Ballarò · Mondello</span>
         </div>
         <div class="day-stats">
           <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
           <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">09:00</span><span class="stat-lbl"><span data-it>Inizio</span><span data-es>Inicio</span></span></div>
           <div class="stat"><span class="stat-val">San Paolo</span><span class="stat-lbl">Hotel</span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">
-        🏗️ <span data-it>Contenuti in preparazione…<br><span style="font-size:11px">Cappella Palatina · Ballarò · Mondello</span></span>
-        <span data-es>Contenido en preparación…<br><span style="font-size:11px">Capilla Palatina · Ballarò · Mondello</span></span>
+
+      <!-- Cappella Palatina -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">09:00</span><span class="dur">~2h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏛️ <span data-it>Visita</span><span data-es>Visita</span></div>
+            <div class="stop-title">Palazzo dei Normanni & Cappella Palatina</div>
+            <div class="stop-sub"><span data-it>PRENOTARE ONLINE · federicosecondo.org · ~18,50 €</span><span data-es>RESERVAR ONLINE · federicosecondo.org · ~18,50 €</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1548813831-2b9a98cfc7ef?w=800&q=85','Cappella Palatina — mosaici dorati normanni, 1143')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1548813831-2b9a98cfc7ef?w=600&q=80" alt="Cappella Palatina" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Cappella Palatina — i mosaici dorati di Ruggero II</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px">
+              <div class="photo-item" onclick="apriLb('https://images.unsplash.com/photo-1529260830199-42c24126f198?w=800&q=85','Cattedrale di Palermo')">
+                <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?w=300&q=75" alt="Cattedrale" loading="lazy" onerror="this.parentElement.style.display='none'" style="width:100%;height:100px;object-fit:cover;border-radius:8px;display:block;cursor:pointer">
+                <div class="photo-cap">Cattedrale di Palermo</div>
+              </div>
+              <div class="photo-item" onclick="apriLb('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=85','Sicilia — vicoli storici')">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=300&q=75" alt="Vicoli Palermo" loading="lazy" onerror="this.parentElement.style.display='none'" style="width:100%;height:100px;object-fit:cover;border-radius:8px;display:block;cursor:pointer">
+                <div class="photo-cap">Centro storico</div>
+              </div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia</span><span data-es>La historia</span></div>
+            <p data-it>La Cappella Palatina è un unicum mondiale: struttura romanica latina, soffitti intarsiati arabi (muqarnas fatimide con scene del paradiso coranico — danzatrici, suonatori, giocatori di scacchi), mosaici dorati bizantini. Tre culture fuse in un'unica cappella per volere di Ruggero II nel 1130. I mosaici sono formati da due lastre di vetro con uno strato sottilissimo d'oro — luccica davvero oro. Guy de Maupassant la definì in visita nel 1885 "la più bella chiesa del mondo".</p>
+            <p data-es>La Capilla Palatina es un unicum mundial: estructura románica latina, techos árabes con escenas del paraíso coránico, mosaicos dorados bizantinos. Tres culturas fundidas por Ruggero II en 1130. Los mosaicos son dos láminas de vidrio con oro real entre ellas. Guy de Maupassant la llamó en 1885 "la iglesia más bella del mundo".</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it><strong>Il Gattopardo</strong> (1963) di <strong>Luchino Visconti</strong> — Palma d'Oro a Cannes, 98% su Rotten Tomatoes, nella lista dei 12 film preferiti di <strong>Martin Scorsese</strong> — è stato girato quasi interamente a Palermo. La scena del gran ballo (un terzo del film) fu girata a <strong>Palazzo Valguarnera-Gangi</strong> con <strong>Burt Lancaster</strong>, <strong>Alain Delon</strong> e <strong>Claudia Cardinale</strong>, con migliaia di candele reali. Nel 2025 su Netflix è uscita la serie <em>Il Gattopardo</em> girata negli stessi luoghi.</p>
+              <p data-es><strong>El Gatopardo</strong> (1963) de <strong>Luchino Visconti</strong> — Palma de Oro en Cannes, 98% en Rotten Tomatoes, en la lista de los 12 favoritos de <strong>Martin Scorsese</strong> — fue filmado casi íntegramente en Palermo. La escena del baile fue rodada en Palazzo Valguarnera-Gangi con <strong>Burt Lancaster</strong>, <strong>Alain Delon</strong> y <strong>Claudia Cardinale</strong>. En 2025 salió en Netflix la serie <em>El Gatopardo</em>.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">💡 <span data-it>Cosa non perdere</span><span data-es>Qué no perderse</span></div>
+            <p data-it>① <strong>Il soffitto muqarnas</strong> — intagli arabi con figure umane (vietate dall'Islam ma qui presenti), unico in Sicilia<br>② <strong>Il Cristo Pantocratore</strong> — appare 3 volte in punti diversi della cappella, fenomeno unico<br>③ <strong>Il candelabro monolitico</strong> — 4 m di marmo bianco con leoni, ancora usato a Pasqua</p>
+            <p data-es>① <strong>El techo muqarnas</strong> — tallados árabes con figuras humanas (prohibidas por el Islam pero aquí presentes), único en Sicilia<br>② <strong>El Cristo Pantocrátor</strong> — aparece 3 veces en distintos puntos<br>③ <strong>El candelabro monolítico</strong> — 4 m de mármol, aún usado en Pascua</p>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- Quattro Canti e Ballaro -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">11:30</span><span class="dur">~1h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏙️ <span data-it>Centro + Pranzo</span><span data-es>Centro + Almuerzo</span></div>
+            <div class="stop-title">Quattro Canti · Cattedrale · Mercato Ballarò</div>
+            <div class="stop-sub"><span data-it>A piedi · tutto gratuito</span><span data-es>A pie · todo gratuito</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Il percorso</span><span data-es>El recorrido</span></div>
+            <p data-it><strong>Quattro Canti</strong> (Piazza Villena) — cuore barocco di Palermo, quattro palazzi identici con fontane e stemmi. Poi la <strong>Cattedrale</strong> (facciata arabo-normanna, ingresso gratuito). Infine il <strong>Mercato Ballarò</strong> — il più antico di Palermo, dove si mangia per strada.</p>
+            <p data-es><strong>Quattro Canti</strong> (Piazza Villena) — corazón barroco de Palermo. La <strong>Catedral</strong> (fachada árabe-normanda, entrada gratuita). El <strong>Mercado Ballarò</strong> — el más antiguo de Palermo.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Il <strong>Teatro Massimo</strong> (10 minuti a piedi da Ballarò) ospitò la scena finale de <em>Il Padrino III</em> (1990) con <strong>Al Pacino</strong> e <strong>Sofia Coppola</strong>. Il teatro era chiuso da 23 anni — fu Coppola a riaprirlo. Tra il 2021 e il 2025 il centro storico di Palermo è stato location principale di <strong>The White Lotus</strong> (HBO) — Ballarò, Mondello, i palazzi nobiliari del centro sono tutti nella serie.</p>
+              <p data-es>El <strong>Teatro Massimo</strong> (10 minutos a pie) fue escenario de la escena final de <em>El Padrino III</em> (1990) con <strong>Al Pacino</strong> y <strong>Sofia Coppola</strong>. El teatro llevaba 23 años cerrado — fue Coppola quien lo reabrió. Entre 2021 y 2025 el centro de Palermo fue la principal location de <strong>The White Lotus</strong> (HBO).</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Street food da provare</span><span data-es>Street food imprescindible</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🥙 <span data-it>I 5 must di Ballarò</span><span data-es>Los 5 imprescindibles de Ballarò</span></div>
+              <p class="cibo-desc" data-it>🍊 <strong>Arancina</strong> (con la A! — a Palermo è rotonda) · 🫓 <strong>Panelle</strong> (frittelle di ceci) · 🥪 <strong>Pane ca' meusa</strong> (milza e polmone — coraggioso ma autentico) · 🍕 <strong>Sfincione</strong> (pizza spessa palermitana) · 🧀 <strong>Crocchè</strong> (crocchette di patate fritte). Budget per due: ~15 €</p>
+              <p class="cibo-desc" data-es>🍊 <strong>Arancina</strong> (con A, redonda) · 🫓 <strong>Panelle</strong> (tortitas de garbanzos) · 🥪 <strong>Pane ca' meusa</strong> (bazo y pulmón — atrevido pero auténtico) · 🍕 <strong>Sfincione</strong> (pizza gruesa palermitana) · 🧀 <strong>Crocchè</strong> (croquetas de patata). Presupuesto para dos: ~15 €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mondello -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">14:30</span><span class="dur">~3h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏖️ Mare</div>
+            <div class="stop-title">Spiaggia di Mondello</div>
+            <div class="stop-sub"><span data-it>20 min da Palermo · sabbia bianca · snorkeling</span><span data-es>20 min del centro · arena blanca · snorkel</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=85','Mondello — la spiaggia di Palermo')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Mondello" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Mondello — sabbia bianca e acque cristalline</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La spiaggia</span><span data-es>La playa</span></div>
+            <p data-it>Sabbia bianca finissima, acque basse e chiare, ideale per snorkeling. Incorniciata dal Monte Pellegrino. Il celebre <strong>Stabilimento Charleston</strong> liberty degli anni '20 su palafitte è un'icona fotografica imperdibile. Lidi con ombrelloni oppure spiaggia libera.</p>
+            <p data-es>Arena blanca finísima, aguas poco profundas y cristalinas, ideal para snorkel. Enmarcada por el Monte Pellegrino. El famoso <strong>Établissement Charleston</strong> liberty de los años 20 sobre pilotes es un icono fotográfico.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it><strong>Villa Boscogrande</strong>, dove fu girata la scena iniziale de <em>Il Gattopardo</em> con Burt Lancaster, si trova sulla strada per Mondello (Piana dei Colli). Ci passerete accanto — visibile dalla strada, con la grande scalinata a ferro di cavallo del film. È una residenza privata ma fotografabile dall'esterno.</p>
+              <p data-es><strong>Villa Boscogrande</strong>, donde se filmó la escena inicial de <em>El Gatopardo</em> con Burt Lancaster, está en el camino hacia Mondello. Pasarán cerca — visible desde la calle, con la gran escalinata en herradura del filme.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ristoranti fissi Giorno 2 -->
+      <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          🍽️ <span data-it>DOVE MANGIARE — Giorno 2</span><span data-es>DÓNDE COMER — Día 2</span>
+          <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+        </div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🥗 <span data-it>Pranzo — Street food Ballarò (~12:30)</span><span data-es>Almuerzo — Street food Ballarò (~12:30)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name" data-it>Street food al Ballarò</div><div class="rist-name" data-es>Street food en Ballarò</div>
+              <div class="rist-desc" data-it>Mangiate camminando tra i banchi. Arancina+panelle+sfincione per due: ~15 €. L'esperienza più autentica di Palermo.</div>
+              <div class="rist-desc" data-es>Coman caminando entre puestos. Arancina+panelle+sfincione para dos: ~15 €. La experiencia más auténtica de Palermo.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Trattoria Ferro di Cavallo</div>
+              <div class="rist-desc" data-it>Via Venezia 21 · Tel: 091 331835 · La più citata di Palermo. Cucina palermitana classica ~15 €/persona. Arrivare presto.</div>
+              <div class="rist-desc" data-es>Via Venezia 21 · Tel: 091 331835 · La más citada de Palermo. Cocina palermitana ~15 €/persona. Llegar temprano.</div>
+            </div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🌙 <span data-it>Cena — Palermo (~20:00)</span><span data-es>Cena — Palermo (~20:00)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name">Osteria Mangia e Bevi</div>
+              <div class="rist-desc" data-it>Largo Cavalieri di Malta 18 · Tel: 091 507 3943 · Vucciria. Km0, parmigiana top, gazebo. Meno di 25 €/persona.</div>
+              <div class="rist-desc" data-es>Largo Cavalieri di Malta 18 · Tel: 091 507 3943 · Vucciria. Km0, parmigiana increíble. Menos de 25 €/persona.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Trattoria al Vecchio Club Rosanero</div>
+              <div class="rist-desc" data-it>Via Maqueda · Trattoria storica del Palermo Calcio. Porzioni abbondanti, prezzi onesti. Sempre piena — ottimo segno.</div>
+              <div class="rist-desc" data-es>Via Maqueda · Trattoria histórica del Palermo FC. Porciones abundantes, precios honestos. Siempre llena — buena señal.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">3</div><div>
+              <div class="rist-name">Osteria Mercede</div>
+              <div class="rist-desc" data-it>Via Re Federico 8 · Tel: 091 982 1458 · Pesce freschissimo: polpo, tonno rosso, ricci. 150g di pasta. Prezzi onesti.</div>
+              <div class="rist-desc" data-es>Via Re Federico 8 · Tel: 091 982 1458 · Pescado fresco: pulpo, atún rojo, erizos. 150g de pasta. Precios honestos.</div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /day1 -->
 
     <div class="day-panel" id="day2">
       <div class="day-hero">
@@ -1156,49 +1315,13 @@ function seekAudio(e){
 
 
 // ════ LIGHTBOX ════
-const lbPhotos = [
-  {src:"https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=85&fit=crop", cap:"Duomo di Cefalù — facciata normanna UNESCO, XII sec."},
-  {src:"https://images.unsplash.com/photo-1597657135822-ed6aef9b4388?w=800&q=85&fit=crop", cap:"Lavatoio medievale — le 22 bocche a testa di leone"},
-  {src:"https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?w=800&q=85&fit=crop", cap:"Cristo Pantocratore — mosaico bizantino del 1145"},
-  {src:"https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=85&fit=crop", cap:"Porto di Cefalù — barche dei pescatori"},
-  {src:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80&fit=crop", cap:"Sarde a Beccafico — piatto tipico siciliano"},
-  {src:"https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=400&q=80&fit=crop", cap:"Granita alla mandorla — colazione siciliana per eccellenza"},
-];
-let lbCur = 0;
-const lbEl = document.getElementById('lb');
-const lbImg = document.getElementById('lb-img');
-const lbCap = document.getElementById('lb-cap');
-const lbCounter = document.getElementById('lb-counter');
-const lbCounter = document.getElementById('lb-counter');
+// ════ LIGHTBOX ════
+function apriLb(src, cap) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-cap').textContent = cap;
+  document.getElementById('lb').classList.add('open');
+}
 
-function openLb(i){
-  lbCur = i;
-  lbShow();
-  lbEl.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLb(){
-  lbEl.classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeLbBg(e){ if(e.target === lbEl) closeLb(); }
-function navLb(d){
-  lbCur = (lbCur + d + lbPhotos.length) % lbPhotos.length;
-  lbShow();
-}
-function lbShow(){
-  const p = lbPhotos[lbCur];
-  lbImg.src = p.src;
-  lbImg.alt = p.cap;
-  lbCap.textContent = p.cap;
-  lbCounter.textContent = (lbCur+1) + ' / ' + lbPhotos.length;
-}
-document.addEventListener('keydown', e=>{
-  if(!lbEl.classList.contains('open')) return;
-  if(e.key==='Escape') closeLb();
-  if(e.key==='ArrowRight') navLb(1);
-  if(e.key==='ArrowLeft') navLb(-1);
-});
 
 // ════ Se in iframe (preview Claude) salta intro ════
 if(window.self !== window.top){
@@ -1207,16 +1330,10 @@ if(window.self !== window.top){
 }
 </script>
 
-<div class="lb" id="lb" onclick="closeLbBg(event)">
-  <button class="lb-close" onclick="closeLb()">✕</button>
+<div id="lb">
   <img id="lb-img" src="" alt="">
-  <div class="lb-cap" id="lb-cap"></div>
-  <div class="lb-nav">
-    <button onclick="navLb(-1)">← <span data-it>Prec.</span><span data-es>Ant.</span></button>
-    <button onclick="navLb(1)"><span data-it>Succ.</span><span data-es>Sig.</span> →</button>
-  </div>
-  <div class="lb-counter" id="lb-counter"></div>
+  <p id="lb-cap"></p>
+  <button id="lb-close" onclick="event.stopPropagation();document.getElementById('lb').classList.remove('open')">✕ Chiudi</button>
 </div>
-
 </body>
 </html>
