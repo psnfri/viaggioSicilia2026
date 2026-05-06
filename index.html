@@ -1423,40 +1423,402 @@ body:not(.es) span[data-es]{display:none!important}
 
     </div><!-- /day3 -->
 
+    
+    <!-- ═══ GIORNO 5 ═══ -->
     <div class="day-panel" id="day4">
       <div class="day-hero">
         <div class="day-badge">📅 1 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 5</div>
-        <h2 data-it>Isole Egadi in barca</h2>
-        <h2 data-es>Islas Egadi en barco</h2>
+        <h2 data-it>Isole Egadi — Gita in barca</h2>
+        <h2 data-es>Islas Egadi — Excursión en barco</h2>
         <div class="day-route">
-          <span data-it>Favignana · Levanzo · Marettimo · Porto Trapani</span>
-          <span data-es>Favignana · Levanzo · Marettimo · Puerto Trápani</span>
+          <span data-it>Porto Trapani → Favignana → Levanzo → (Marettimo) → rientro</span>
+          <span data-es>Puerto Trápani → Favignana → Levanzo → (Marettimo) → regreso</span>
         </div>
         <div class="day-stats">
           <div class="stat"><span class="stat-val">~8h</span><span class="stat-lbl"><span data-it>In barca</span><span data-es>En barco</span></span></div>
           <div class="stat"><span class="stat-val">50-70 €</span><span class="stat-lbl"><span data-it>A persona</span><span data-es>Por persona</span></span></div>
+          <div class="stat"><span class="stat-val">09:00</span><span class="stat-lbl"><span data-it>Imbarco</span><span data-es>Embarque</span></span></div>
           <div class="stat"><span class="stat-val">La Tonnara</span><span class="stat-lbl">Hotel</span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
-    </div>
 
+      <!-- Nota operatore -->
+      <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:14px;margin-bottom:16px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">⚠️ <span data-it>Operatore da confermare</span><span data-es>Operador por confirmar</span></div>
+        <p style="font-size:12px;color:rgba(245,239,224,0.75)" data-it>L'operatore del tour è ancora da scegliere — vedi il PDF con i 6 operatori comparati. <strong>Prenotare con almeno 2-3 settimane di anticipo</strong>. In caso di mare mosso la gita può essere rinviata — chiedere all'hotel la politica di rimborso/rinvio.</p>
+        <p style="font-size:12px;color:rgba(245,239,224,0.75)" data-es>El operador del tour está aún por elegir — ver el PDF con los 6 operadores comparados. <strong>Reservar con al menos 2-3 semanas de antelación</strong>. En caso de mar agitado la excursión puede posponerse.</p>
+      </div>
+
+      <!-- Favignana -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">~10:00</span><span class="dur">~2h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🦋 <span data-it>Prima isola</span><span data-es>Primera isla</span></div>
+            <div class="stop-title">Favignana — Cala Rossa & Cala Azzurra</div>
+            <div class="stop-sub"><span data-it>La più grande delle Egadi · mare turchese · ex tonnara Florio</span><span data-es>La más grande de las Egadi · mar turquesa · ex atunería Florio</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=85','Favignana — acque turchesi delle Egadi')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Favignana" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Favignana — acque color smeraldo, la più grande delle Egadi</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia</span><span data-es>La historia</span></div>
+            <p data-it>Favignana assomiglia a una <strong>farfalla</strong> vista dall'alto — il nome antico greco era <em>Aegusa</em> (isola delle capre), poi prese il nome dal vento Favonio. Per secoli fu la <strong>capitale mondiale del tonno</strong>: qui sorgeva la più grande tonnara del Mediterraneo, gestita dalla famiglia <strong>Florio</strong> — i Rockefeller della Sicilia dell'800. Ignazio Florio costruì un vero stabilimento industriale per la conservazione del tonno sott'olio, rivoluzionando l'industria alimentare mondiale. Oggi è il <strong>Museo del Mare più grande d'Europa</strong>. La mattanza del tonno si svolgeva qui ogni primavera fino agli anni '80 — un rito collettivo con il <em>rais</em> che guidava la ciurma con canti e remi.</p>
+            <p data-es>Favignana parece una <strong>mariposa</strong> vista desde arriba. Durante siglos fue la <strong>capital mundial del atún</strong>: aquí estaba la atunería más grande del Mediterráneo, gestionada por la familia <strong>Florio</strong> — los Rockefeller de la Sicilia del 800. Ignazio Florio construyó una industria de conservación de atún en aceite, revolucionando la industria alimentaria mundial. Hoy es el <strong>Museo del Mar más grande de Europa</strong>. La matanza del atún se practicó hasta los años 80 — un rito colectivo con el <em>rais</em> guiando la tripulación con cantos y remos.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🏖️ <span data-it>Le calette da non perdere</span><span data-es>Las calas que no perderse</span></div>
+            <p data-it><strong>Cala Rossa</strong> — scogliere rosse a picco sul mare turchese, snorkeling straordinario tra le rocce, atmosfera selvaggia. <strong>Cala Azzurra</strong> — sabbia finissima, acque cristalline, più accessibile. <strong>Cala del Bue Marino</strong> — grotte marine e antiche cave di tufo, fondali ricchi di vita. Tutte raggiungibili in barca dallo skipper.</p>
+            <p data-es><strong>Cala Rossa</strong> — acantilados rojos sobre mar turquesa, snorkel extraordinario. <strong>Cala Azzurra</strong> — arena finísima, aguas cristalinas, más accesible. <strong>Cala del Bue Marino</strong> — cuevas marinas y antiguas canteras de toba, fondos ricos en vida.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>La famiglia Florio è stata la più potente e glamour della storia siciliana. <strong>Franca Florio</strong> — moglie di Ignazio II — era considerata la donna più bella d'Italia ed era amica di <strong>Kaiser Guglielmo II</strong>, <strong>re Edoardo VII</strong> e riceveva a Favignana tutto il jet set europeo. La sua collana di perle lunga 7 metri era leggendaria. Quando i Florio fallirono, i creditori le sequestrarono tutto — anche i gioielli strappati dal collo. Franca disse: <em>"Ho perduto tutto tranne la mia eleganza."</em> La serie RAI <strong><em>I Leoni di Sicilia</em></strong> (2023, disponibile su Disney+) racconta proprio la storia dei Florio — una delle serie italiane più viste degli ultimi anni.</p>
+              <p data-es>La familia Florio fue la más poderosa y glamurosa de la historia siciliana. <strong>Franca Florio</strong> era considerada la mujer más bella de Italia y era amiga de <strong>Kaiser Guillermo II</strong> y <strong>rey Eduardo VII</strong>. Su collar de perlas de 7 metros era legendario. Cuando los Florio quebraron, los acreedores le quitaron todo — incluso las joyas. Franca dijo: <em>"Lo he perdido todo menos mi elegancia."</em> La serie RAI <strong><em>I Leoni di Sicilia</em></strong> (2023, en Disney+) cuenta la historia de los Florio.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Cosa assaggiare a Favignana</span><span data-es>Qué probar en Favignana</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🐟 <span data-it>Tonno rosso fresco — il re dell'isola</span><span data-es>Atún rojo fresco — el rey de la isla</span></div>
+              <p class="cibo-desc" data-it>Il tonno rosso di Favignana è diverso da tutto quello che avete mangiato. Freschissimo, servito crudo in carpaccio, marinato, alla griglia o in agrodolce. Se il tour include pranzo a terra a Favignana, ordinatelo — è il piatto della vita. Anche la <strong>bottarga</strong> (uova di tonno essiccate) e il <strong>lattume</strong> (sperma di tonno fritto, specialità rara) meritano.</p>
+              <p class="cibo-desc" data-es>El atún rojo de Favignana es diferente a todo lo que hayáis comido. Fresquísimo, servido crudo en carpaccio, marinado, a la plancha o en agridulce. Si el tour incluye almuerzo en tierra en Favignana, pedidlo. También la <strong>bottarga</strong> (huevas de atún secas) y el <strong>lattume</strong> (esperma de atún frito, rareza) merecen probarse.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Levanzo -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">~13:00</span><span class="dur">~2h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🗿 <span data-it>Seconda isola</span><span data-es>Segunda isla</span></div>
+            <div class="stop-title">Levanzo — Grotta del Genovese & calette</div>
+            <div class="stop-sub"><span data-it>La più piccola · pitture preistoriche · Ulisse nell'Odissea</span><span data-es>La más pequeña · pinturas prehistóricas · Ulises en la Odisea</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=800&q=85','Levanzo — porto del piccolo borgo')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=600&q=80" alt="Levanzo" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Levanzo — il piccolo borgo di pescatori con case bianche</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia e il mistero</span><span data-es>La historia y el misterio</span></div>
+            <p data-it>Levanzo è la più piccola delle Egadi — un borgo di poche centinaia di abitanti, case bianche sul porto, silenzio. I Greci la chiamavano <strong><em>Hiera</em></strong> — l'Isola Sacra. Alcuni studiosi sostengono che potrebbe essere la vera <strong>Itaca di Ulisse</strong>. Nell'Odissea, Levanzo è citata come uno degli approdi del protagonista. La <strong>Grotta del Genovese</strong>, scoperta nel 1949, contiene pitture rupestri del <strong>Paleolitico superiore</strong> — 10.000 anni fa — tra le più importanti del Mediterraneo: cervi, tonni, figure umane che danzano. Sono state dipinte quando Levanzo era ancora unita alla Sicilia e si cacciava a piedi tra le colline. A 27 metri di profondità a Cala Minnola giacciono i resti di una <strong>nave romana del I sec. a.C.</strong> con anfore ancora intatte.</p>
+            <p data-es>Levanzo es la más pequeña de las Egadi — un pueblo de pocas centenas de habitantes. Los griegos la llamaban <strong><em>Hiera</em></strong> — la Isla Sagrada. Algunos estudiosos sostienen que podría ser la verdadera <strong>Ítaca de Ulises</strong>. La <strong>Grotta del Genovese</strong>, descubierta en 1949, contiene pinturas rupestres del <strong>Paleolítico superior</strong> — 10.000 años atrás — entre las más importantes del Mediterráneo. A 27 metros de profundidad en Cala Minnola yacen restos de un <strong>navío romano del siglo I a.C.</strong> con ánforas intactas.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <p data-it>Quando nel 241 a.C. Roma sconfisse Cartagine nella <strong>Battaglia delle Egadi</strong> — la più grande battaglia navale dell'antichità, 700 navi coinvolte — nacque il primo impero romano. Fu combattuta esattamente tra Levanzo e la costa siciliana. Nel 2004, una spedizione subacquea ha recuperato dai fondali di Levanzo <strong>i rostri delle navi romane</strong> — le speronature in bronzo che servivano ad affondare le navi nemiche. Sono conservati al Museo Pepoli di Trapani. Una scoperta che ha riscritto la storia della battaglia.</p>
+              <p data-es>Cuando en 241 a.C. Roma venció a Cartago en la <strong>Batalla de las Égades</strong> — la mayor batalla naval de la antigüedad, 700 naves — nació el primer imperio romano. Se combatió exactamente entre Levanzo y la costa siciliana. En 2004, una expedición submarina recuperó del fondo <strong>los espolones de las naves romanas</strong> en bronce. Están conservados en el Museo Pepoli de Trápani.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marettimo -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">~15:00</span><span class="dur">~1h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">⛰️ <span data-it>Terza isola (se inclusa)</span><span data-es>Tercera isla (si incluida)</span></div>
+            <div class="stop-title">Marettimo — la più selvaggia</div>
+            <div class="stop-sub"><span data-it>Dipende dall'operatore scelto · la più lontana e autentica</span><span data-es>Depende del operador elegido · la más lejana y auténtica</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La descrizione</span><span data-es>La descripción</span></div>
+            <p data-it>Marettimo è <strong>la più "isola" delle tre</strong> — si staccò dalla terraferma millenni prima delle altre. Un solo piccolo borgo di pescatori, case strette l'una all'altra, niente macchine, niente turismo di massa. I Greci la chiamavano <em>Hiera</em> — Isola Sacra. Il <strong>Castello di Punta Troia</strong> (normanno, poi saraceno, poi borbonico — usato come prigione fino al 1844) sovrasta il promontorio. La <strong>fauna marina</strong> è eccezionale: tartarughe Caretta Caretta, barracuda, delfini avvistati regolarmente, e la rarissima <strong>Foca Monaca</strong> — il mammifero marino più raro del Mediterraneo — è stata avvistata più volte nelle grotte di Marettimo.</p>
+            <p data-es>Marettimo es <strong>la más "isla" de las tres</strong>. Un solo pueblo de pescadores, sin coches, sin turismo de masas. El <strong>Castello di Punta Troia</strong> (normando, luego sarraceno, luego borbónico) domina el promontorio. La <strong>fauna marina</strong> es excepcional: tortugas Caretta Caretta, barracudas, delfines, y la rarísima <strong>Foca Monaca</strong> — el mamífero marino más raro del Mediterráneo.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Specialità di Marettimo</span><span data-es>Especialidad de Marettimo</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🦞 <span data-it>Spaghetti in brodo con l'aragosta</span><span data-es>Espaguetis en caldo de langosta</span></div>
+              <p class="cibo-desc" data-it>Il piatto iconico di Marettimo — spaghetti cotti nel brodo di aragosta fresca. Semplice, povero, straordinario. Se il tour prevede pranzo a Marettimo, è questo il piatto da ordinare senza esitazione.</p>
+              <p class="cibo-desc" data-es>El plato icónico de Marettimo — espaguetis cocidos en caldo de langosta fresca. Simple, humilde, extraordinario. Si el tour incluye almuerzo en Marettimo, este es el plato a pedir sin dudarlo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info pratiche barca -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">09:00</span><span class="dur">Info</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">⛵ <span data-it>Logistica imbarco</span><span data-es>Logística embarque</span></div>
+            <div class="stop-title"><span data-it>Porto di Trapani — punto di partenza</span><span data-es>Puerto de Trápani — punto de salida</span></div>
+            <div class="stop-sub"><span data-it>~10 min da La Tonnara · parcheggio porto disponibile</span><span data-es>~10 min de La Tonnara · aparcamiento en el puerto</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📋 <span data-it>Da portare in barca</span><span data-es>Qué llevar en el barco</span></div>
+            <p data-it>🤿 Maschera e boccaglio (o chiedi all'operatore se fornisce)<br>👟 Scarpette da scoglio<br>🧴 Crema solare waterproof alta protezione<br>💊 Antinausea se soffrite il mare (prenderla 1h prima)<br>🎒 Zaino impermeabile o busta stagna per il telefono<br>🧥 Felpa leggera — in barca può fare fresco anche a luglio<br>💧 Acqua abbondante oltre a quella fornita<br>⚠️ <strong>Comunicare all'operatore che la compagna non sa nuotare</strong> — forniranno giubbotto e assistenza</p>
+            <p data-es>🤿 Máscara y tubo (o preguntar al operador si los proporciona)<br>👟 Escarpines<br>🧴 Crema solar waterproof alta protección<br>💊 Antimareo si sufren el mar (tomarlo 1h antes)<br>🎒 Mochila impermeable o bolsa estanca para el móvil<br>🧥 Sudadera ligera — en barco puede refrescar<br>⚠️ <strong>Comunicar al operador que la compañera no sabe nadar</strong> — proporcionarán chaleco y asistencia</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Operatori consigliati</span><span data-es>Operadores recomendados</span></div>
+            <p data-it><strong>Egadi Charter & Tour</strong> (charter privato, tutte 3 le isole) — egadicharterandtour.com<br><strong>Egadi Charter</strong> (motonave grande, pranzo incluso) — egadicharter.it<br><strong>AB Vacanze Trapani</strong> (catamarano, max 12 persone) — abvacanzetrapani.it<br>→ Vedi PDF comparativo con tutti i dettagli prezzi e recensioni</p>
+            <p data-es><strong>Egadi Charter & Tour</strong> (charter privado, las 3 islas) — egadicharterandtour.com<br><strong>Egadi Charter</strong> (motonave grande, almuerzo incluido) — egadicharter.it<br><strong>AB Vacanze Trapani</strong> (catamarán, máx 12 personas) — abvacanzetrapani.it<br>→ Ver PDF comparativo con todos los detalles precios y reseñas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ristoranti fissi Giorno 5 -->
+      <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          🍽️ <span data-it>DOVE MANGIARE — Giorno 5</span><span data-es>DÓNDE COMER — Día 5</span>
+          <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+        </div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🥗 <span data-it>Pranzo — a bordo o nelle isole (incluso nel tour)</span><span data-es>Almuerzo — a bordo o en las islas (incluido en el tour)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name" data-it>Pranzo a bordo (se incluso)</div>
+              <div class="rist-name" data-es>Almuerzo a bordo (si incluido)</div>
+              <div class="rist-desc" data-it>Dipende dall'operatore. Alcuni includono pranzo tipico a bordo (pane cunzato, affettati, formaggi locali, vino). Verificare al momento della prenotazione.</div>
+              <div class="rist-desc" data-es>Depende del operador. Algunos incluyen almuerzo típico a bordo. Verificar al reservar.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name" data-it>Ristorante a Favignana o Levanzo</div>
+              <div class="rist-name" data-es>Restaurante en Favignana o Levanzo</div>
+              <div class="rist-desc" data-it>Se il tour prevede sosta a terra: a Favignana chiedete tonno rosso fresco; a Levanzo il pesce del giorno con le sarde e i polpi. Lasciatevi guidare dallo skipper sul posto migliore.</div>
+              <div class="rist-desc" data-es>Si el tour prevé parada en tierra: en Favignana pidan atún rojo fresco; en Levanzo el pescado del día. Dejad que el skipper os guíe al mejor lugar.</div>
+            </div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🌙 <span data-it>Cena — Trapani/Valderice (~19:30)</span><span data-es>Cena — Trápani/Valderice (~19:30)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name" data-it>Cena leggera in hotel — La Tonnara</div>
+              <div class="rist-name" data-es>Cena ligera en el hotel — La Tonnara</div>
+              <div class="rist-desc" data-it>Dopo 8 ore in barca probabilmente vorrete qualcosa di comodo e vicino. Il ristorante dell'hotel è la scelta più saggia. Aperitivo sul pontile guardando il tramonto sulle Egadi.</div>
+              <div class="rist-desc" data-es>Después de 8 horas en barco probablemente querréis algo cómodo y cercano. El restaurante del hotel es la elección más sensata. Aperitivo en el muelle viendo el atardecer sobre las Egadi.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">La Bettolaccia — Trapani</div>
+              <div class="rist-desc" data-it>Via Fardella, Trapani · Tel: 0923 21695. Se avete ancora energia. Busiate al pesto trapanese, tonno fresco, cous cous. Trattoria storica dei locali.</div>
+              <div class="rist-desc" data-es>Via Fardella, Trápani · Tel: 0923 21695. Si tenéis energía. Busiate al pesto trapanés, atún fresco, cuscús. Trattoria histórica de los lugareños.</div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /day4 -->
+
+    
+    <!-- ═══ GIORNO 6 ═══ -->
     <div class="day-panel" id="day5">
       <div class="day-hero">
         <div class="day-badge">📅 2 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 6</div>
-        <h2 data-it>Mazara del Vallo & Saline di Mozia</h2>
-        <h2 data-es>Mazara del Vallo & Salinas de Mozia</h2>
+        <h2 data-it>Saline di Mozia → Marsala → Mazara del Vallo → Sciacca</h2>
+        <h2 data-es>Salinas de Mozia → Marsala → Mazara del Vallo → Sciacca</h2>
         <div class="day-route">
-          <span data-it>Kasbah araba · Isola fenicia · Trasferta Sciacca</span>
-          <span data-es>Kasbah árabe · Isla fenicia · Traslado a Sciacca</span>
+          <span data-it>CHECK-OUT La Tonnara · percorso ottimizzato nord→sud · CHECK-IN Villa Calandrino</span>
+          <span data-es>CHECK-OUT La Tonnara · recorrido optimizado norte→sur · CHECK-IN Villa Calandrino</span>
         </div>
         <div class="day-stats">
-          <div class="stat"><span class="stat-val">~4h30</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
+          <div class="stat"><span class="stat-val">~116 km</span><span class="stat-lbl"><span data-it>Totale</span><span data-es>Total</span></span></div>
+          <div class="stat"><span class="stat-val">~2h</span><span class="stat-lbl"><span data-it>Guida</span><span data-es>Manejo</span></span></div>
+          <div class="stat"><span class="stat-val">~4h</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
           <div class="stat"><span class="stat-val">Villa Cal.</span><span class="stat-lbl">Hotel</span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
-    </div>
+
+      <!-- Nota percorso ottimizzato -->
+      <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:12px 14px;margin-bottom:16px">
+        <p style="font-size:11px;color:rgba(245,239,224,0.75)" data-it>🗺️ <strong>Percorso ottimizzato:</strong> La Tonnara → Mozia/Marsala (25 km) → Mazara del Vallo (25 km) → Sciacca (56 km). Sequenza lineare nord→sud senza tornare indietro. Risparmio rispetto alla sequenza precedente: ~50 km e ~40 minuti.</p>
+        <p style="font-size:11px;color:rgba(245,239,224,0.75)" data-es>🗺️ <strong>Recorrido optimizado:</strong> La Tonnara → Mozia/Marsala (25 km) → Mazara del Vallo (25 km) → Sciacca (56 km). Secuencia lineal norte→sur sin volver atrás. Ahorro: ~50 km y ~40 minutos.</p>
+      </div>
+
+      <!-- Saline di Mozia -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">09:00</span><span class="dur">~2h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🧂 <span data-it>CHECK-OUT + Prima visita</span><span data-es>CHECK-OUT + Primera visita</span></div>
+            <div class="stop-title">Saline di Mozia & Isola di Mozia</div>
+            <div class="stop-sub"><span data-it>25 km da La Tonnara · traghettino ~5 € · Museo Whitaker ~5 €</span><span data-es>25 km de La Tonnara · ferry ~5 € · Museo Whitaker ~5 €</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1604999565976-8913ad2ddb37?w=800&q=85','Saline di Marsala — mulini a vento e vasche colorate')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb37?w=600&q=80" alt="Saline di Marsala" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Saline di Marsala — mulini a vento e vasche color terracotta</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia</span><span data-es>La historia</span></div>
+            <p data-it>Le <strong>Saline di Marsala</strong> sono uno dei paesaggi più fotografati di Sicilia — mulini a vento bianchi tra le vasche di sale color rosa-terracotta, con le Isole Egadi sullo sfondo. La produzione del sale qui è ininterrotta da 3.000 anni, dai Fenici in poi. Le vasche cambiano colore durante il giorno con la luce, raggiungendo il massimo splendore al tramonto. Dall'altra parte dello Stagnone si raggiunge in barchetta l'<strong>Isola di Mozia</strong> — un'isola fenicia del VII sec. a.C., senza auto, senza turismo di massa. Il <strong>Museo Whitaker</strong> conserva il <em>Giovinetto di Mozia</em>, una statua in marmo del V sec. a.C. di bellezza straordinaria — considerata uno dei capolavori della scultura greca in Sicilia.</p>
+            <p data-es>Las <strong>Salinas de Marsala</strong> son uno de los paisajes más fotografiados de Sicilia — molinos de viento blancos entre las cubetas de sal color rosa-terracota, con las Islas Egadi al fondo. La producción de sal aquí es ininterrumpida desde hace 3.000 años. Al otro lado del Estanque se llega en barca a la <strong>Isla de Mozia</strong> — una isla fenicia del siglo VII a.C. El <strong>Museo Whitaker</strong> conserva el <em>Joven de Mozia</em>, estatua de mármol del siglo V a.C. considerada una de las obras maestras de la escultura griega en Sicilia.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <p data-it>Joseph Whitaker era un ricco inglese appassionato di archeologia che a fine '800 acquistò l'isola di Mozia e la scavò per decenni con i suoi soldi. Nel 1979 suo nipote donò l'isola alla Fondazione Whitaker — ancora oggi gestisce il museo. Il <em>Giovinetto di Mozia</em> fu trovato nel 1979 e ancora oggi è al centro di un dibattito appassionante: era un atleta vittorioso? Un auriga? Un dio? Nessuno lo sa con certezza. Ha la tunica aderente che rivela ogni muscolo del corpo — uno dei più sensuali dell'arte classica. Nel 2022 è stato prestato al British Museum di Londra per una mostra — è tornato a Mozia solo nel 2023.</p>
+              <p data-es>Joseph Whitaker era un rico inglés apasionado de arqueología que a finales del 800 compró la isla de Mozia y la excavó durante décadas. El <em>Joven de Mozia</em> fue encontrado en 1979 y es centro de un debate apasionante: ¿era un atleta victorioso? ¿Un auriga? ¿Un dios? Nadie lo sabe. Tiene la túnica ceñida que revela cada músculo — uno de los más sensuales del arte clásico. En 2022 fue prestado al British Museum de Londres — regresó a Mozia solo en 2023.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Specialità</span><span data-es>Especialidad</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🍷 <span data-it>Vino Marsala DOC e tonno rosso</span><span data-es>Vino Marsala DOC y atún rojo</span></div>
+              <p class="cibo-desc" data-it>Il Marsala fu "inventato" per caso nel 1796 dall'inglese John Woodhouse, che aggiunse alcol al vino locale per preservarlo durante la traversata marina. Oggi è un vino DOC con centinaia di varianti. Le <strong>cantine Florio e Pellegrino</strong> vicino alle saline offrono degustazioni. Il tonno rosso sotto sale o sott'olio prodotto localmente è un'eccellenza da portare a casa.</p>
+              <p class="cibo-desc" data-es>El Marsala fue "inventado" por accidente en 1796 por el inglés John Woodhouse, que añadió alcohol al vino local para preservarlo durante la travesía marina. Hoy es un vino DOC. Las <strong>bodegas Florio y Pellegrino</strong> cerca de las salinas ofrecen degustaciones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pranzo Marsala -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">11:30</span><span class="dur">~1h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🍽️ <span data-it>Pranzo</span><span data-es>Almuerzo</span></div>
+            <div class="stop-title"><span data-it>Pranzo a Marsala — porto</span><span data-es>Almuerzo en Marsala — puerto</span></div>
+            <div class="stop-sub"><span data-it>5 km dalle saline · cucina di pesce · vino Marsala</span><span data-es>5 km de las salinas · cocina de pescado · vino Marsala</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">🍴 <span data-it>Dove mangiare a Marsala</span><span data-es>Dónde comer en Marsala</span></div>
+            <div class="ristoranti">
+              <div class="rist-item"><div class="rist-num">1</div><div>
+                <div class="rist-name">Trattoria da Pino — Marsala porto</div>
+                <div class="rist-desc" data-it>Sul porto di Marsala. Pesce freschissimo, pasta con le sarde, polpo. Prezzi onesti, atmosfera da porto vero. Citata dai locali come la più autentica.</div>
+                <div class="rist-desc" data-es>En el puerto de Marsala. Pescado fresco, pasta con sardinas, pulpo. Precios honestos, ambiente de puerto real.</div>
+              </div></div>
+              <div class="rist-item"><div class="rist-num">2</div><div>
+                <div class="rist-name">Osteria del Mare — Marsala</div>
+                <div class="rist-desc" data-it>Zona lungomare. Cucina siciliana tradizionale, busiate al pesto trapanese, pesce spada alla ghiotta. ~20 € a persona.</div>
+                <div class="rist-desc" data-es>Zona paseo marítimo. Cocina siciliana tradicional, busiate al pesto trapanés, pez espada. ~20 € por persona.</div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mazara del Vallo -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">13:00</span><span class="dur">~2h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🕌 <span data-it>Visita città</span><span data-es>Visita ciudad</span></div>
+            <div class="stop-title">Mazara del Vallo — Kasbah & Satiro Danzante</div>
+            <div class="stop-sub"><span data-it>25 km da Marsala · Museo Satiro ingresso libero · unica Kasbah d'Italia</span><span data-es>25 km de Marsala · Museo Sátiro entrada libre · única Kasbah de Italia</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=800&q=85','Vicoli della Kasbah di Mazara del Vallo')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=600&q=80" alt="Kasbah Mazara" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Kasbah di Mazara del Vallo — vicoli arabeggianti unici in Italia</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La Kasbah</span><span data-es>La Kasbah</span></div>
+            <p data-it>La Kasbah di Mazara del Vallo è <strong>l'unico quartiere arabo ancora abitato d'Italia</strong>. Risale all'827 d.C. quando gli arabi sbarcarono qui da Susa (Tunisia) per conquistare la Sicilia. Negli anni '70 sono arrivati i pescatori tunisini — oggi sono circa 5.000 e abitano ancora gli stessi vicoli. <strong>Il canto del muezzin si sovrappone alle campane della chiesa di San Francesco</strong> — letteralmente a pochi metri di distanza. Nei vicoli trovate maioliche dipinte a mano che raccontano storie locali, la <strong>Porta Blu</strong> (via Pilazza 31) che sembra un riad marocchino, circoli dove gli uomini giocano a carte e fumano il narghilè. Non siete in Africa, siete in Italia.</p>
+            <p data-es>La Kasbah de Mazara del Vallo es <strong>el único barrio árabe aún habitado de Italia</strong>. Data del 827 d.C. cuando los árabes desembarcaron aquí desde Susa (Túnez). En los años 70 llegaron pescadores tunecinos — hoy son unos 5.000 y habitan los mismos callejones. <strong>El canto del muecín se superpone a las campanas de la iglesia de San Francisco</strong> — literalmente a pocos metros. En los callejones encontraréis la <strong>Puerta Azul</strong> (via Pilazza 31) que parece un riad marroquí.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🏺 <span data-it>Il Satiro Danzante</span><span data-es>El Sátiro Danzante</span></div>
+            <p data-it>Il Museo del Satiro (ex chiesa di Sant'Egidio, ingresso libero o modico) ospita una delle scoperte più straordinarie del '900. <strong>Nel luglio 1997 il peschereccio "Capitan Ciccio"</strong> ripescò dai fondali del Canale di Sicilia, a 500 metri di profondità, una gamba di bronzo. Nell'marzo 1998 tornò negli stessi fondali e recuperò il resto del corpo — perdendo un braccio nel recupero. La statua: 2,5 metri di bronzo greco, IV-III sec. a.C., attribuita alla scuola di <strong>Prassitele</strong>. Raffigura un satiro in preda all'estasi dionisiaca, in un salto con il capo rivolto all'indietro. Ha ancora gli occhi di alabastro originali. È stata esposta al <strong>Louvre</strong> e al <strong>British Museum</strong>.</p>
+            <p data-es>El Museo del Sátiro (ex iglesia de Sant'Egidio, entrada libre) alberga uno de los descubrimientos más extraordinarios del siglo XX. <strong>En julio de 1997 el barco pesquero "Capitan Ciccio"</strong> recuperó del fondo del Canal de Sicilia, a 500 metros de profundidad, una pierna de bronce. En marzo de 1998 volvió y recuperó el resto del cuerpo. La estatua: 2,5 metros de bronce griego, atribuida a la escuela de <strong>Praxíteles</strong>. Tiene aún los ojos de alabastro originales. Ha sido expuesta en el <strong>Louvre</strong> y el <strong>British Museum</strong>.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>La Kasbah di Mazara è uno dei set più ambiti del cinema italiano. <strong><em>Il Commissario Montalbano</em></strong> ci ha girato diversi episodi — i vicoli della Kasbah diventano i vicoli di Vigàta. Ma il collegamento più sottile è con <strong><em>Terraferma</em></strong> (2011) di <strong>Emanuele Crialese</strong>, candidato all'Oscar come Miglior Film Straniero, che racconta i pescatori siciliani e i migranti dal mare — una storia che potrebbe essere ambientata esattamente a Mazara del Vallo, dove questa realtà è quotidiana da decenni. Per la vostra compagna peruviana: il tema dell'immigrazione e dell'incontro tra culture che vedrete nella Kasbah non è molto diverso da quello che vive la comunità latinoamericana in Italia.</p>
+              <p data-es>La Kasbah de Mazara es uno de los sets más codiciados del cine italiano. <strong><em>Il Commissario Montalbano</em></strong> rodó aquí varios episodios. La conexión más profunda es con <strong><em>Terraferma</em></strong> (2011) de <strong>Emanuele Crialese</strong>, candidato al Oscar como Mejor Película Extranjera, que cuenta la historia de pescadores sicilianos y migrantes del mar — una historia que podría ambientarse exactamente aquí, donde esta realidad es cotidiana. Para vuestra compañera peruana: el tema del encuentro entre culturas que veréis en la Kasbah no es muy diferente al que vive la comunidad latinoamericana en Italia.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Percorso consigliato</span><span data-es>Recorrido recomendado</span></div>
+            <p data-it>① <strong>Piazza della Repubblica</strong> — punto di partenza, Cattedrale normanna costruita sui resti della moschea araba<br>② <strong>Kasbah</strong> — immergetevi nei vicoli senza mappa, perdetevi, è parte dell'esperienza. Cercate la <strong>Porta Blu</strong> (via Pilazza 31)<br>③ <strong>Museo del Satiro</strong> — ex chiesa di Sant'Egidio, 15 minuti a piedi dalla Kasbah<br>④ <strong>Portocanale</strong> — i pescherecci da qui partono per giorni in mare aperto verso l'Africa</p>
+            <p data-es>① <strong>Piazza della Repubblica</strong> — punto de partida, Catedral normanda construida sobre los restos de la mezquita árabe<br>② <strong>Kasbah</strong> — sumergíos en los callejones sin mapa, perdíos, es parte de la experiencia. Busca la <strong>Puerta Azul</strong> (via Pilazza 31)<br>③ <strong>Museo del Sátiro</strong> — ex iglesia de Sant'Egidio, 15 minutos a pie<br>④ <strong>Puerto canal</strong> — los barcos pesqueros parten desde aquí hacia África</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ristoranti fissi Giorno 6 -->
+      <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          🍽️ <span data-it>DOVE MANGIARE — Giorno 6</span><span data-es>DÓNDE COMER — Día 6</span>
+          <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+        </div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🥗 <span data-it>Pranzo — Marsala porto (~11:30)</span><span data-es>Almuerzo — Marsala puerto (~11:30)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name">Trattoria da Pino — Marsala</div>
+              <div class="rist-desc" data-it>Porto di Marsala. Pesce fresco, busiate, polpo alla luciana. Prezzi onesti. La più autentica secondo i locali.</div>
+              <div class="rist-desc" data-es>Puerto de Marsala. Pescado fresco, busiate, pulpo. Precios honestos. La más auténtica según los locales.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Osteria Mascalzone Latino — Marsala</div>
+              <div class="rist-desc" data-it>Via XI Maggio, Marsala. Cucina trapanese, ottime recensioni su TripAdvisor. Tonno fresco in vari modi. ~25 €.</div>
+              <div class="rist-desc" data-es>Via XI Maggio, Marsala. Cocina trapanesa, excelentes reseñas. Atún fresco de distintas formas. ~25 €.</div>
+            </div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🌙 <span data-it>Cena — Sciacca (~19:30 arrivo)</span><span data-es>Cena — Sciacca (~19:30 llegada)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name" data-it>Passeggiata sul porto di Sciacca + cena</div>
+              <div class="rist-name" data-es>Paseo por el puerto de Sciacca + cena</div>
+              <div class="rist-desc" data-it>Arrivate a Sciacca, check-in a Villa Calandrino, poi passeggiata sul porto peschereccio al tramonto. Il porto di Sciacca è vivissimo la sera. Lungo il lungomare trovate ottime trattorie di pesce fresco.</div>
+              <div class="rist-desc" data-es>Llegad a Sciacca, check-in en Villa Calandrino, luego paseo por el puerto pesquero al atardecer. El puerto de Sciacca es muy animado por la noche. A lo largo del paseo encontraréis excelentes tascas de pescado fresco.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Osteria del Porto — Sciacca</div>
+              <div class="rist-desc" data-it>Lungomare di Sciacca. Specialità: gamberi rossi di Sciacca (tra i migliori del Mediterraneo), triglie, pesce spada. Prezzi medi ~25 €. Prima cena nella nuova base.</div>
+              <div class="rist-desc" data-es>Paseo marítimo de Sciacca. Especialidad: gambas rojas de Sciacca (entre las mejores del Mediterráneo), salmonetes, pez espada. Precios medios ~25 €.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">3</div><div>
+              <div class="rist-name" data-it>Cena in hotel — Villa Calandrino</div>
+              <div class="rist-name" data-es>Cena en el hotel — Villa Calandrino</div>
+              <div class="rist-desc" data-it>Se preferite restare dopo un giorno intenso. Villa Calandrino ha un ristorante con cucina siciliana. Relax garantito.</div>
+              <div class="rist-desc" data-es>Si preferís quedaros después de un día intenso. Villa Calandrino tiene restaurante con cocina siciliana.</div>
+            </div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding:10px;background:rgba(201,168,76,0.08);border-radius:8px;border-left:2px solid var(--gold)">
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-it>🦐 <strong>Da non perdere a Sciacca:</strong> i <strong>gamberi rossi di Sciacca</strong> sono rinomati in tutta Italia — carnosi, dolci, con un retrogusto di iodio intenso. Vanno mangiati crudi in carpaccio o al massimo scottati. Se li trovate al porto freschissimi, è una delle esperienze gastronomiche del viaggio.</p>
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-es>🦐 <strong>No perderse en Sciacca:</strong> las <strong>gambas rojas de Sciacca</strong> son famosas en toda Italia — carnosas, dulces, con retrogusto de yodo intenso. Se comen crudas en carpaccio o ligeramente marcadas. Si las encontráis en el puerto frescas, es una de las experiencias gastronómicas del viaje.</p>
+        </div>
+      </div>
+
+    </div><!-- /day5 -->
 
     <div class="day-panel" id="day6">
       <div class="day-hero">
