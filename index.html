@@ -1820,66 +1820,363 @@ body:not(.es) span[data-es]{display:none!important}
 
     </div><!-- /day5 -->
 
+    
+    <!-- ═══ GIORNO 7 ═══ -->
     <div class="day-panel" id="day6">
       <div class="day-hero">
         <div class="day-badge">📅 3 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 7</div>
-        <h2 data-it>Sciacca · Selinunte · Eraclea Minoa</h2>
-        <h2 data-es>Sciacca · Selinunte · Eraclea Minoa</h2>
+        <h2 data-it>Sciacca centro + Selinunte + mare a Marinella</h2>
+        <h2 data-es>Sciacca centro + Selinunte + mar en Marinella</h2>
         <div class="day-route">
-          <span data-it>Centro medievale · Templi greci · Scogliere bianche</span>
-          <span data-es>Centro medieval · Templos griegos · Acantilados blancos</span>
+          <span data-it>Sciacca medievale mattina · Parco Selinunte · pranzo e mare Marinella · rientro Sciacca</span>
+          <span data-es>Sciacca medieval mañana · Parque Selinunte · almuerzo y mar Marinella · regreso Sciacca</span>
         </div>
         <div class="day-stats">
-          <div class="stat"><span class="stat-val">~4h30</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
-          <div class="stat"><span class="stat-val">~2h30</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">~80 km</span><span class="stat-lbl"><span data-it>Totale</span><span data-es>Total</span></span></div>
+          <div class="stat"><span class="stat-val">~1h30</span><span class="stat-lbl"><span data-it>Guida</span><span data-es>Manejo</span></span></div>
+          <div class="stat"><span class="stat-val">~4h</span><span class="stat-lbl"><span data-it>Visite</span><span data-es>Visitas</span></span></div>
           <div class="stat"><span class="stat-val">Villa Cal.</span><span class="stat-lbl">Hotel</span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
-    </div>
 
+      <!-- Nota percorso -->
+      <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:12px 14px;margin-bottom:16px">
+        <p style="font-size:11px;color:rgba(245,239,224,0.75)" data-it>🗺️ <strong>Percorso ottimizzato:</strong> Sciacca → Selinunte andata/ritorno (~78 km totali). Pranzo e mare direttamente a Marinella di Selinunte dopo la visita — nessuna deviazione inutile.</p>
+        <p style="font-size:11px;color:rgba(245,239,224,0.75)" data-es>🗺️ <strong>Recorrido optimizado:</strong> Sciacca → Selinunte ida/vuelta (~78 km totales). Almuerzo y mar directamente en Marinella di Selinunte tras la visita — sin desvíos innecesarios.</p>
+      </div>
+
+      <!-- Sciacca centro -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">09:00</span><span class="dur">~1h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏰 <span data-it>Centro medievale</span><span data-es>Centro medieval</span></div>
+            <div class="stop-title">Sciacca — centro storico</div>
+            <div class="stop-sub"><span data-it>Gratuito · Piazza Scandaliato panoramica · porto peschereccio</span><span data-es>Gratuito · Piazza Scandaliato panorámica · puerto pesquero</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La città</span><span data-es>La ciudad</span></div>
+            <p data-it>Sciacca è una città a sorpresa — non è famosa come Agrigento o Palermo ma ha un centro storico medievale bellissimo e autentico, su un promontorio a picco sul mare. <strong>Piazza Scandaliato</strong> è il balcone sul Mediterraneo più suggestivo della Sicilia meridionale — una terrazza naturale da cui si vede il mare fino all'orizzonte. Il <strong>porto peschereccio</strong> è il più importante della Sicilia per la pesca dei gamberi rossi. La <strong>Porta San Salvatore</strong> è una delle meglio conservate della Sicilia medievale. Le <strong>terme</strong> di Sciacca sfruttano acque sulfuree vulcaniche attive da secoli — lo stesso monte su cui sorge la città è vulcanicamente attivo (Monte San Calogero, con grotte naturali di vapore caldo usate fin dall'antichità).</p>
+            <p data-es>Sciacca es una ciudad sorpresa — no es famosa como Agrigento o Palermo pero tiene un bellísimo centro histórico medieval sobre un promontorio sobre el mar. <strong>Piazza Scandaliato</strong> es el balcón sobre el Mediterráneo más sugestivo del sur de Sicilia. El <strong>puerto pesquero</strong> es el más importante de Sicilia para las gambas rojas. El <strong>Monte San Calogero</strong> tiene cuevas naturales de vapor caliente usadas desde la antigüedad.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Percorso a piedi</span><span data-es>Recorrido a pie</span></div>
+            <p data-it>① <strong>Piazza Scandaliato</strong> — la terrazza sul mare, punto di partenza obbligatorio<br>② <strong>Porta San Salvatore</strong> — ingresso medievale alla città alta<br>③ <strong>Chiesa Madre</strong> (Cattedrale) — facciata normanna, interno barocco<br>④ <strong>Castello dei Luna</strong> — resti della fortezza medievale dei marchesi Luna, la famiglia spagnola più potente di Sciacca<br>⑤ <strong>Porto</strong> — le barche dei gamberi rossi, il mercato del pesce mattutino se ci siete presto</p>
+            <p data-es>① <strong>Piazza Scandaliato</strong> — la terraza sobre el mar, punto de partida obligatorio<br>② <strong>Porta San Salvatore</strong> — entrada medieval a la ciudad alta<br>③ <strong>Catedral</strong> — fachada normanda, interior barroco<br>④ <strong>Castillo de los Luna</strong> — restos de la fortaleza medieval<br>⑤ <strong>Puerto</strong> — los barcos de gambas rojas</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <p data-it>Sciacca ha una storia incredibile legata alla <strong>famiglia Luna</strong>. Nel 1400 la città fu teatro di una faida sanguinosa tra i Luna (spagnoli, filoaragonesi) e i Perollo (siciliani, antigovernativi) che durò quasi 100 anni e fece centinaia di morti. La faida finì quando Giacomo Luna invitò i Perollo a un banchetto di pace — e li massacrò tutti a tavola. Una storia degna di Game of Thrones, ambientata qui 500 anni prima. La città si svuotò per decenni dalla paura.</p>
+              <p data-es>Sciacca tiene una historia increíble ligada a la <strong>familia Luna</strong>. En el 1400 la ciudad fue escenario de una faida sangrienta entre los Luna (españoles) y los Perollo (sicilianos) que duró casi 100 años. La faida terminó cuando Giacomo Luna invitó a los Perollo a un banquete de paz — y los masacró a todos en la mesa. Una historia digna de Juego de Tronos, ambientada aquí 500 años antes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selinunte -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">11:00</span><span class="dur">~2h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏛️ <span data-it>Parco Archeologico</span><span data-es>Parque Arqueológico</span></div>
+            <div class="stop-title">Selinunte — il parco più grande d'Europa</div>
+            <div class="stop-sub"><span data-it>39 km da Sciacca · biglietto 6 € · carrellino elettrico consigliato</span><span data-es>39 km de Sciacca · entrada 6 € · carrito eléctrico recomendado</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=85','Selinunte — templi greci affacciati sul Mediterraneo')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Selinunte templi" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Selinunte — il Tempio E (Era) affacciato sul Mediterraneo</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia — grandezza e rovina</span><span data-es>La historia — grandeza y ruina</span></div>
+            <p data-it>Selinunte prese il nome dal <strong>sélinon</strong> — il sedano selvatico che ancora oggi cresce ovunque nel parco e profuma l'aria. Fondata nel VII sec. a.C. da coloni greci, raggiunse 100.000 abitanti in meno di 200 anni diventando una delle città più ricche della Magna Grecia. Poi nel <strong>409 a.C. Annibale cartaginese</strong> la distrusse con un esercito di 100.000 uomini in soli 9 giorni — uno dei massacri più rapidi dell'antichità. La città non si riprese mai completamente. Un successivo terremoto medievale fece crollare i templi come domino. Oggi il parco di <strong>270 ettari</strong> è il sito archeologico più esteso d'Europa — più grande della Valle dei Templi di Agrigento.</p>
+            <p data-es>Selinunte tomó el nombre del <strong>sélinon</strong> — el apio silvestre que aún hoy crece por todo el parque. Fundada en el siglo VII a.C., alcanzó 100.000 habitantes en menos de 200 años. En <strong>409 a.C. Aníbal cartaginés</strong> la destruyó con un ejército de 100.000 hombres en solo 9 días — uno de los masacres más rápidos de la antigüedad. El parque de <strong>270 hectáreas</strong> es el sitio arqueológico más extenso de Europa.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🏛️ <span data-it>Cosa vedere — i 3 must</span><span data-es>Qué ver — los 3 imprescindibles</span></div>
+            <p data-it><strong>① Tempio E (Era)</strong> — il più bello e l'unico parzialmente ricostruito. Affacciato sul mare, in stile dorico maturo, aveva le pareti rivestite da lastre di marmo dipinto. Al tramonto è magico.<br><strong>② Tempio G</strong> — il più colossale: 113×54 metri, uno dei 5 templi greci più grandi mai costruiti. È completamente crollato — un campo di massi enormi che pesano fino a 100 tonnellate ciascuno. La scala di distruzione è impressionante.<br><strong>③ Acropoli</strong> — i templi più antichi, sul promontorio tra i due fiumi, con vista sul mare da entrambi i lati.</p>
+            <p data-es><strong>① Templo E (Hera)</strong> — el más bello y el único parcialmente reconstruido. Con vistas al mar, al atardecer es mágico.<br><strong>② Templo G</strong> — el más colosal: 113×54 metros, uno de los 5 templos griegos más grandes jamás construidos. Completamente derrumbado — un campo de enormes bloques de hasta 100 toneladas.<br><strong>③ Acrópolis</strong> — los templos más antiguos, en el promontorio entre los dos ríos.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Le Cave di Cusa, a 13 km da Selinunte, sono una delle location più inquietanti e affascinanti della Sicilia — le cave da cui veniva estratta la pietra per i templi, abbandonate di corsa il giorno in cui Annibale sbarcò. I blocchi di pietra sono ancora lì, a metà lavorazione, come se i tagliapietre fossero scappati ieri. <strong>Werner Herzog</strong>, il regista tedesco di <em>Fitzcarraldo</em> e <em>Nosferatu</em>, le ha definite "il posto più inquietante che abbia mai visto in Europa". Sono visitabili su prenotazione e valgono la deviazione se avete tempo.</p>
+              <p data-es>Las Cuevas de Cusa, a 13 km de Selinunte, son una de las locations más inquietantes de Sicilia — las canteras de donde se extraía la piedra para los templos, abandonadas de golpe el día en que Aníbal desembarcó. Los bloques de piedra siguen allí, a medio labrar. <strong>Werner Herzog</strong>, director de <em>Fitzcarraldo</em>, las ha definido "el lugar más inquietante que he visto en Europa".</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">💡 <span data-it>Consigli pratici</span><span data-es>Consejos prácticos</span></div>
+            <p data-it>① <strong>Carrellino elettrico (+6 €)</strong> — il parco è enorme, a luglio con il caldo è quasi obbligatorio<br>② <strong>Arrivare alle 11:00</strong> — il sole del mattino presto è il migliore per le foto dei templi<br>③ <strong>Acqua abbondante</strong> — nessuna fontana, bar solo all'ingresso<br>④ <strong>Cappello e crema</strong> — zero ombra nell'area dei templi<br>⑤ <strong>2h30 minime</strong> per vedere tutto con il carrellino</p>
+            <p data-es>① <strong>Carrito eléctrico (+6 €)</strong> — el parque es enorme, en julio con el calor es casi obligatorio<br>② <strong>Llegar a las 11:00</strong> — la luz de la mañana es la mejor para fotos<br>③ <strong>Agua abundante</strong> — sin fuentes, bar solo en la entrada<br>④ <strong>Sombrero y crema solar</strong> — sin sombra en el área de los templos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marinella pranzo e mare -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">14:00</span><span class="dur">~3h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🍽️🏖️ <span data-it>Pranzo + Mare</span><span data-es>Almuerzo + Mar</span></div>
+            <div class="stop-title">Marinella di Selinunte</div>
+            <div class="stop-sub"><span data-it>5 min a piedi dal parco · spiaggia libera · ristoranti sul mare</span><span data-es>5 min a pie del parque · playa libre · restaurantes sobre el mar</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=85','Marinella di Selinunte — spiaggia ai piedi del parco')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Marinella spiaggia" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Marinella di Selinunte — spiaggia sabbiosa ai piedi del parco archeologico</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>Il borgo</span><span data-es>El pueblo</span></div>
+            <p data-it>Marinella di Selinunte è il piccolo borgo balneare direttamente ai piedi del parco archeologico. Spiaggia sabbiosa lunga, acque pulite, pochissimi turisti rispetto alle mete più note. Il vantaggio unico: potete fare il bagno con vista sui templi greci sullo sfondo — una delle prospettive più singolari della Sicilia. I ristoranti sul lungomare hanno il pesce freschissimo direttamente dai pescatori locali.</p>
+            <p data-es>Marinella di Selinunte es el pequeño pueblo costero directamente al pie del parque arqueológico. Playa arenosa larga, aguas limpias, pocos turistas. La ventaja única: podéis bañaros con los templos griegos al fondo — una de las perspectivas más singulares de Sicilia.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Dove mangiare a Marinella</span><span data-es>Dónde comer en Marinella</span></div>
+            <div class="ristoranti">
+              <div class="rist-item"><div class="rist-num">1</div><div>
+                <div class="rist-name">Lido Azzurro — Marinella</div>
+                <div class="rist-desc" data-it>Ristorante direttamente sulla spiaggia. Pesce fresco del giorno, pasta alle vongole, frittura mista. Ottimi per pranzo dopo la visita al parco. Prezzi medi ~20 €.</div>
+                <div class="rist-desc" data-es>Restaurante directamente en la playa. Pescado fresco del día, pasta con almejas, fritura mixta. Excelente para almuerzo tras visitar el parque. ~20 €.</div>
+              </div></div>
+              <div class="rist-item"><div class="rist-num">2</div><div>
+                <div class="rist-name">Trattoria il Pescatore — Marinella</div>
+                <div class="rist-desc" data-it>Lungomare di Marinella. Trattoria di pesce tradizionale, porzioni abbondanti. Citata come la più autentica del borgo. Prenotare se possibile.</div>
+                <div class="rist-desc" data-es>Paseo marítimo de Marinella. Trattoria de pescado tradicional, porciones abundantes. La más auténtica del pueblo. Reservar si es posible.</div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ristoranti fissi Giorno 7 -->
+      <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          🍽️ <span data-it>DOVE MANGIARE — Giorno 7</span><span data-es>DÓNDE COMER — Día 7</span>
+          <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+        </div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🥗 <span data-it>Pranzo — Marinella di Selinunte (~14:00)</span><span data-es>Almuerzo — Marinella di Selinunte (~14:00)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name">Lido Azzurro — sulla spiaggia</div>
+              <div class="rist-desc" data-it>Pesce fresco, pasta alle vongole, frittura. Vista mare. ~20 €.</div>
+              <div class="rist-desc" data-es>Pescado fresco, pasta con almejas, fritura. Vista al mar. ~20 €.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Trattoria il Pescatore</div>
+              <div class="rist-desc" data-it>La più autentica di Marinella. Porzioni abbondanti, pesce del giorno.</div>
+              <div class="rist-desc" data-es>La más auténtica de Marinella. Porciones abundantes, pescado del día.</div>
+            </div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🌙 <span data-it>Cena — Sciacca (~20:00)</span><span data-es>Cena — Sciacca (~20:00)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name">Porto di Sciacca — gamberi rossi</div>
+              <div class="rist-desc" data-it>Ultima sera a Sciacca. I gamberi rossi di Sciacca crudi o scottati sono l'esperienza gastronomica del viaggio. Lungo il porto trovate le migliori trattorie di pesce fresco della città.</div>
+              <div class="rist-desc" data-es>Última noche en Sciacca. Las gambas rojas de Sciacca crudas o marcadas son la experiencia gastronómica del viaje. A lo largo del puerto encontraréis las mejores tascas de pescado.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">Osteria la Lampara — Sciacca</div>
+              <div class="rist-desc" data-it>Lungomare di Sciacca. Una delle più apprezzate dai locali. Specialità: spaghetti ai ricci, gamberi rossi crudi, pesce spada alla ghiotta. ~25 €. Ultima cena siciliana — fatela bene!</div>
+              <div class="rist-desc" data-es>Paseo marítimo de Sciacca. Una de las más apreciadas por los locales. Especialidades: espaguetis con erizos, gambas rojas crudas, pez espada. ~25 €. ¡Última cena siciliana — hacedla bien!</div>
+            </div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding:10px;background:rgba(201,168,76,0.08);border-radius:8px;border-left:2px solid var(--gold)">
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-it>🌅 <strong>Consiglio serale:</strong> dopo cena, passeggiata su <strong>Piazza Scandaliato</strong> al chiaro di luna — la terrazza panoramica di Sciacca sul Mediterraneo è bellissima di sera, con le luci della città riflesse sul mare. È l'ultima notte in Sicilia — godetevela!</p>
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-es>🌅 <strong>Consejo nocturno:</strong> después de cenar, paseo por <strong>Piazza Scandaliato</strong> a la luz de la luna — la terraza panorámica de Sciacca sobre el Mediterráneo es preciosa de noche. ¡Es la última noche en Sicilia — disfrutadla!</p>
+        </div>
+      </div>
+
+    </div><!-- /day6 -->
+
+    
+    <!-- ═══ GIORNO 8 ═══ -->
     <div class="day-panel" id="day7">
       <div class="day-hero">
         <div class="day-badge">📅 4 <span data-it>Luglio</span><span data-es>Julio</span> · <span data-it>Giorno</span><span data-es>Día</span> 8</div>
         <h2 data-it>Ritorno — Tropea & Pizzo Calabro</h2>
         <h2 data-es>Regreso — Tropea & Pizzo Calabro</h2>
         <div class="day-route">
-          <span data-it>Traghetto Messina · Tropea pranzo · Pizzo tartufo gelato</span>
-          <span data-es>Ferry Messina · Almuerzo Tropea · Pizzo helado tartufo</span>
+          <span data-it>Sciacca → traghetto Messina → Tropea (pranzo) → Pizzo (tartufo) → Cava de' Tirreni</span>
+          <span data-es>Sciacca → ferry Messina → Tropea (almuerzo) → Pizzo (tartufo) → Cava de' Tirreni</span>
         </div>
         <div class="day-stats">
-          <div class="stat"><span class="stat-val">~7h</span><span class="stat-lbl"><span data-it>Guida</span><span data-es>Manejo</span></span></div>
+          <div class="stat"><span class="stat-val">~7h</span><span class="stat-lbl"><span data-it>Guida totale</span><span data-es>Manejo total</span></span></div>
+          <div class="stat"><span class="stat-val">09:00</span><span class="stat-lbl"><span data-it>Partenza</span><span data-es>Salida</span></span></div>
           <div class="stat"><span class="stat-val">~19:30</span><span class="stat-lbl"><span data-it>Arrivo</span><span data-es>Llegada</span></span></div>
+          <div class="stat"><span class="stat-val">🏠 Casa</span><span class="stat-lbl"><span data-it>Destinazione</span><span data-es>Destino</span></span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
-    </div>
 
-  </div><!-- /app-content -->
+      <!-- Schema orario -->
+      <div style="background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:12px;padding:14px;margin-bottom:16px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">⏱️ <span data-it>Schema orario giornata</span><span data-es>Horario del día</span></div>
+        <div style="font-size:12px;color:rgba(245,239,224,0.8);line-height:2" data-it>
+          🕘 <strong>09:00</strong> — Partenza da Sciacca dopo colazione<br>
+          🚢 <strong>~11:30</strong> — Traghetto Villa San Giovanni → Messina (35 min)<br>
+          🌊 <strong>~13:30</strong> — Arrivo Tropea, pranzo con vista<br>
+          🍦 <strong>~15:30</strong> — Pizzo Calabro, tartufo gelato in piazza<br>
+          🛑 <strong>~16:00</strong> — Ripartenza verso nord<br>
+          🏠 <strong>~19:30</strong> — Arrivo Cava de' Tirreni
+        </div>
+        <div style="font-size:12px;color:rgba(245,239,224,0.8);line-height:2" data-es>
+          🕘 <strong>09:00</strong> — Salida de Sciacca tras el desayuno<br>
+          🚢 <strong>~11:30</strong> — Ferry Villa San Giovanni → Messina (35 min)<br>
+          🌊 <strong>~13:30</strong> — Llegada Tropea, almuerzo con vistas<br>
+          🍦 <strong>~15:30</strong> — Pizzo Calabro, tartufo gelato en la plaza<br>
+          🏠 <strong>~19:30</strong> — Llegada Cava de' Tirreni
+        </div>
+      </div>
 
-  <!-- Audio bar -->
-  <div class="audio-bar">
-    <button class="audio-play-btn" id="audioBtn" onclick="toggleAudio()">▶</button>
-    <div class="audio-info">
-      <div class="audio-title" id="audioTitle">
-        <span data-it>Guida audio — Cefalù: il Duomo di Ruggero II</span>
-        <span data-es>Guía audio — Cefalù: el Duomo de Ruggero II</span>
+      <!-- Tropea -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">13:30</span><span class="dur">~1h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🌊 <span data-it>Sosta pranzo</span><span data-es>Parada almuerzo</span></div>
+            <div class="stop-title">Tropea — Santa Maria dell'Isola & pranzo</div>
+            <div class="stop-sub"><span data-it>Borgo sul promontorio · Costa degli Dei · cipolla rossa IGP</span><span data-es>Pueblo en el promontorio · Costa de los Dioses · cebolla roja IGP</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&q=85','Tropea — Santa Maria dell'Isola sul promontorio')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Tropea" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Tropea — il Santuario di Santa Maria dell'Isola e le acque turchesi</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La città</span><span data-es>La ciudad</span></div>
+            <p data-it>Tropea è il borgo più fotografato della Calabria — un centro storico medievale arroccato su un promontorio a picco su acque color smeraldo, con il <strong>Santuario di Santa Maria dell'Isola</strong> che sorge su uno scoglio separato dalla terraferma. Tropea è stata eletta <strong>"Borgo dei Borghi 2021"</strong> dalla trasmissione RAI. La leggenda vuole che il fondatore sia stato <strong>Ercole</strong> di ritorno dalle Colonne d'Ercole. Il nome deriva dal greco <em>tropaia</em> — "vento alterno" — per la brezza marina che la caratterizza. Il Santuario fu fondato nel VI sec. da monaci orientali, poi passato ai benedettini: Roberto il Guiscardo normanno lo donò all'Abbazia di Montecassino nel 1060 — ancora oggi ne è proprietà.</p>
+            <p data-es>Tropea es el pueblo más fotografiado de Calabria — un centro histórico medieval encaramado en un promontorio sobre aguas color esmeralda, con el <strong>Santuario de Santa María dell'Isola</strong> sobre un peñón. Tropea fue elegida <strong>"Pueblo de los Pueblos 2021"</strong> por la RAI. La leyenda dice que fue fundada por <strong>Hércules</strong> de regreso de las Columnas de Hércules. El Santuario fue fundado en el siglo VI por monjes orientales y donado a la Abadía de Montecassino por Roberto el Guiscardo normando en 1060.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Nel 2005 RAI Uno girò a Tropea la serie TV <em><strong>Gente di Mare</strong></em> con <strong>Lorenzo Crespi</strong> e <strong>Vanessa Gravina</strong> — una delle prime fiction italiane ad usare Tropea come location principale, che contribuì a renderla famosa al grande pubblico. Ma il collegamento più bello riguarda la cipolla rossa: <strong>Maria Grazia Cucinotto</strong>, attrice siciliana nota per <em>Il Postino</em> e <em>Il Padrino Parte III</em>, è diventata ambasciatrice ufficiale della Cipolla Rossa di Tropea IGP ed è apparsa in uno show culinario su La7 dedicato proprio a questo ingrediente. Una star hollywoodiana che fa da madrina a una cipolla — solo in Italia.</p>
+              <p data-es>En 2005 RAI Uno rodó en Tropea la serie <em><strong>Gente di Mare</strong></em> — una de las primeras ficciones italianas en usar Tropea como location principal. La conexión más bonita: <strong>Maria Grazia Cucinotto</strong>, actriz siciliana conocida por <em>Il Postino</em> y <em>El Padrino Parte III</em>, es embajadora oficial de la Cebolla Roja de Tropea IGP y apareció en un programa culinario en La7. Una estrella hollywoodiense que hace de madrina de una cebolla — solo en Italia.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍽️ <span data-it>Cosa mangiare a Tropea</span><span data-es>Qué comer en Tropea</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🧅 <span data-it>Cipolla Rossa di Tropea IGP — la regina</span><span data-es>Cebolla Roja de Tropea IGP — la reina</span></div>
+              <p class="cibo-desc" data-it>La cipolla rossa di Tropea è talmente dolce che si può mangiare come una mela. Ha un contenuto di acido piruvico molto basso che la rende non pungente — gli zuccheri naturali emergono completamente. Arrivata in Calabria con i Fenici circa 3.000 anni fa. Cercatela in insalata cruda, caramellata su formaggi, oppure — se siete curiosi — in <strong>gelato alla cipolla rossa</strong> da Tonini Gelato. Sì, esiste.</p>
+              <p class="cibo-desc" data-es>La cebolla roja de Tropea es tan dulce que se puede comer como una manzana. Tiene un contenido de ácido pirúvico muy bajo — los azúcares naturales emergen completamente. Llegó a Calabria con los fenicios hace 3.000 años. Búsquenla en ensalada cruda, caramelizada sobre quesos, o — si son curiosos — en <strong>helado de cebolla roja</strong> en Tonini Gelato. Sí, existe.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Da vedere in 1h30</span><span data-es>Qué ver en 1h30</span></div>
+            <p data-it>① <strong>Piazza Cannone</strong> — la terrazza principale sul mare, colpo d'occhio sul Santuario<br>② <strong>Santuario Santa Maria dell'Isola</strong> — scalinata e panorama mozzafiato (15 min a piedi)<br>③ <strong>Corso Vittorio Emanuele</strong> — il corso storico con i negozi di cipolla, 'nduja e prodotti locali<br>④ <strong>Spiaggia di Tropea</strong> — se avete tempo, un tuffo nell'acqua smeraldo è obbligatorio</p>
+            <p data-es>① <strong>Piazza Cannone</strong> — la terraza principal sobre el mar, vistas al Santuario<br>② <strong>Santuario Santa María dell'Isola</strong> — escalinata y panorama impresionante (15 min a pie)<br>③ <strong>Corso Vittorio Emanuele</strong> — el curso histórico con tiendas de cebolla, 'nduja y productos locales<br>④ <strong>Playa de Tropea</strong> — si hay tiempo, un baño en el agua esmeralda es obligatorio</p>
+          </div>
+        </div>
       </div>
-      <div class="audio-sub" id="audioSub">
-        <span data-it>Giorno 1 · ~3 min di lettura</span>
-        <span data-es>Día 1 · ~3 min de lectura</span>
-      </div>
-      <div class="audio-prog-wrap" onclick="seekAudio(event)">
-        <div class="audio-prog" id="audioProgress"></div>
-      </div>
-    </div>
-    <button class="audio-read-btn" onclick="readAloud()">
-      <span data-it>🔊 Leggi</span>
-      <span data-es>🔊 Leer</span>
-    </button>
-  </div>
 
-</div><!-- /app -->
+      <!-- Pizzo Calabro -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">15:30</span><span class="dur">~30 min</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🍦 <span data-it>Sosta obbligatoria</span><span data-es>Parada obligatoria</span></div>
+            <div class="stop-title">Pizzo Calabro — il tartufo gelato</div>
+            <div class="stop-sub"><span data-it>~25 km da Tropea · Piazza della Repubblica · Gelateria Dante o Bar Ercole</span><span data-es>~25 km de Tropea · Piazza della Repubblica · Gelateria Dante o Bar Ercole</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=800&q=85','Pizzo Calabro — tartufo gelato artigianale')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1567529684892-09290a1b2d05?w=600&q=80" alt="Tartufo Pizzo" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Pizzo Calabro — il tartufo gelato: nocciola, cioccolato, cuore fondente</div>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia del tartufo</span><span data-es>La historia del tartufo</span></div>
+            <p data-it>Era il 1952. <strong>Giuseppe De Maria</strong>, detto <strong>"Don Pippo"</strong>, pasticcere messinese alla Gelateria Dante di Pizzo, stava preparando il gelato per un banchetto nuziale importante. A metà lavoro si accorse di aver esaurito gli stampi. Senza stampi, senza gelato, senza matrimonio — disastro totale. Don Pippo non si perse d'animo: prese il gelato alla nocciola e al cioccolato, lo modellò a mano nel palmo della mano creando una semisfera, inserì dentro una colata di cioccolato fondente fuso, lo richiuse, lo spolverò di cacao amaro e lo avvolse in carta pergamena. Lo mise nel ghiaccio a consolidare (i frigoriferi non esistevano ancora). <strong>Nacque il Tartufo di Pizzo</strong> — oggi il primo gelato al mondo ad aver ottenuto il marchio IGP.</p>
+            <p data-es>Era 1952. <strong>Giuseppe De Maria</strong>, apodado <strong>"Don Pippo"</strong>, pastelero messinés en la Gelatería Dante de Pizzo, preparaba el helado para un banquete nupcial importante. A mitad del trabajo descubrió que se habían acabado los moldes. Sin moldes, sin helado — desastre total. Don Pippo no se desanimó: tomó el helado de avellana y chocolate, lo modeló a mano en la palma creando una semiesfera, insertó dentro chocolate fundido líquido, lo cerró, lo espolvoró de cacao amargo y lo envolvió en papel pergamino. <strong>Nació el Tartufo di Pizzo</strong> — hoy el primer helado del mundo en obtener el sello IGP.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🍦 <span data-it>Cosa ordinare</span><span data-es>Qué pedir</span></div>
+            <div class="cibo-card">
+              <div class="cibo-name">🍫 <span data-it>Il Tartufo classico — nocciola + cioccolato + cuore fondente</span><span data-es>El Tartufo clásico — avellana + chocolate + corazón fundente</span></div>
+              <p class="cibo-desc" data-it>Due palline — nocciola e cioccolato — modellate a mano, con un cuore di cioccolato fondente fuso che non solidifica mai (alta percentuale di zucchero). Ricoperto di cacao amaro che gli dà l'aspetto terroso che ricorda il tartufo. <strong>Il segreto:</strong> il cuore rimane liquido anche a temperature negative. Quando lo aprite col cucchiaino — lava di cioccolato.<br><br><strong>Dove:</strong> Gelateria Dante (l'originale) o Bar Ercole (stesso famiglia), entrambe in Piazza della Repubblica. Varianti: pistacchio, bianco, liquirizia.</p>
+              <p class="cibo-desc" data-es>Dos bolas — avellana y chocolate — modeladas a mano, con un corazón de chocolate fundido que nunca solidifica. Cubierto de cacao amargo. <strong>El secreto:</strong> el corazón permanece líquido incluso a temperaturas negativas. Cuando lo abrís con la cucharilla — lava de chocolate.<br><br><strong>Dónde:</strong> Gelatería Dante (el original) o Bar Ercole (misma familia), ambas en Piazza della Repubblica.</p>
+            </div>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <p data-it>Pizzo ha anche un lato storico drammatico che pochi conoscono. Il <strong>Castello Murat</strong> in piazza fu costruito nel XV sec. da Ferdinando I d'Aragona. Qui nel 1815 fu imprigionato e fucilato <strong>Gioacchino Murat</strong> — cognato di Napoleone Bonaparte e re di Napoli — dopo aver tentato di riconquistare il trono. Murat sbarcò in Calabria con pochi uomini, fu catturato quasi subito, processato in 48 ore e fucilato nel castello. Secondo la leggenda, prima di morire aprì lui stesso la propria camicia e comandò ai soldati di mirare al cuore — non al viso. Oggi il castello è museo e si trovano i suoi effetti personali.</p>
+              <p data-es>Pizzo tiene también un lado histórico dramático que pocos conocen. El <strong>Castello Murat</strong> fue construido en el siglo XV. Aquí en 1815 fue encarcelado y fusilado <strong>Gioacchino Murat</strong> — cuñado de Napoleón Bonaparte y rey de Nápoles — tras intentar reconquistar el trono. Según la leyenda, antes de morir abrió él mismo su camisa y ordenó a los soldados apuntar al corazón — no al rostro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rientro -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">16:00</span><span class="dur">~3h30</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏠 <span data-it>Rientro a casa</span><span data-es>Regreso a casa</span></div>
+            <div class="stop-title">Pizzo → Salerno → Cava de' Tirreni</div>
+            <div class="stop-sub"><span data-it>A3 Salerno-Reggio · ~250 km · arrivo ~19:30</span><span data-es>A3 Salerno-Reggio · ~250 km · llegada ~19:30</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">🚗 <span data-it>Il percorso finale</span><span data-es>El recorrido final</span></div>
+            <p data-it>Da Pizzo prendete la A3 direzione Salerno. Il tratto calabrese è panoramico — la costa tirrenica, lo Stromboli all'orizzonte nelle giornate limpide, i viadotti dell'autostrada sospesi tra le colline. Attraversate il confine Calabria-Campania, l'autostrada diventa la Salerno-Reggio e poi l'A3 fino all'uscita Cava de' Tirreni. Siete a casa. 8 giorni, ~1.400 km, la Sicilia occidentale vista e vissuta.</p>
+            <p data-es>Desde Pizzo tomad la A3 dirección Salerno. El tramo calabrés es panorámico — la costa tirrena, el Stromboli en el horizonte. Cruzad la frontera Calabria-Campania hasta la salida Cava de' Tirreni. Estáis en casa. 8 días, ~1.400 km, la Sicilia occidental vista y vivida.</p>
+          </div>
+          <div class="dsec">
+            <div class="dsec-head">🎬 <span data-it>Per la cinefila — il gran finale</span><span data-es>Para la cinéfila — el gran final</span></div>
+            <div class="aneddoto">
+              <p data-it>Mentre guidate verso casa, passate accanto a <strong>Scilla</strong> — dove eravate mattina del primo giorno. Il viaggio si chiude come si era aperto. In questi 8 giorni avete attraversato luoghi che hanno ispirato film straordinari: <em>Cinema Paradiso</em> (Cefalù), <em>Il Gattopardo</em> (Palermo), <em>Il Padrino III</em> (Teatro Massimo), <em>Ocean's Twelve</em> (Scopello), <em>Troy</em> (Segesta), <em>I Leoni di Sicilia</em> (Favignana), <em>Terraferma</em> (Mazara), <em>Gente di Mare</em> (Tropea). La Sicilia non è solo un'isola — è un set cinematografico permanente, uno dei più belli del mondo.</p>
+              <p data-es>Mientras conducís hacia casa, pasáis cerca de <strong>Scilla</strong> — donde estabais la mañana del primer día. El viaje se cierra como se había abierto. En estos 8 días habéis atravesado lugares que inspiraron películas extraordinarias: <em>Cinema Paradiso</em> (Cefalù), <em>El Gatopardo</em> (Palermo), <em>El Padrino III</em> (Teatro Massimo), <em>Ocean's Twelve</em> (Scopello), <em>Troya</em> (Segesta), <em>I Leoni di Sicilia</em> (Favignana), <em>Terraferma</em> (Mazara), <em>Gente di Mare</em> (Tropea). Sicilia no es solo una isla — es un set cinematográfico permanente, uno de los más bellos del mundo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note finali -->
+      <div style="background:linear-gradient(135deg,rgba(201,168,76,0.12),rgba(26,39,68,0.8));border:1px solid rgba(201,168,76,0.3);border-radius:14px;padding:20px;text-align:center;margin-bottom:12px">
+        <div style="font-size:24px;margin-bottom:8px">🏆</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:8px" data-it>Fine viaggio — bentornati a casa!</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:8px" data-es>¡Fin del viaje — bienvenidos a casa!</div>
+        <p style="font-size:12px;color:rgba(245,239,224,0.6);line-height:1.7" data-it>8 giorni · ~1.400 km · 3 hotel · 1 gita in barca · 1 riserva naturale · 2 parchi archeologici · 3 isole · innumerevoli piatti di pesce e granita alla mandorla</p>
+        <p style="font-size:12px;color:rgba(245,239,224,0.6);line-height:1.7" data-es>8 días · ~1.400 km · 3 hoteles · 1 excursión en barco · 1 reserva natural · 2 parques arqueológicos · 3 islas · innumerables platos de pescado y granizados de almendra</p>
+      </div>
+
+    </div><!-- /day7 -->
+
+
+  </div><!-- /app -->
 
 <script>
 // ════ LINGUA ════
