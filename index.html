@@ -129,8 +129,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--blu);color:var(--cream);o
    LINGUA SWITCH
 ════════════════════════════════ */
 .lang-switch{
-  position:fixed;top:14px;right:16px;z-index:500;
-  display:flex;gap:4px;background:rgba(26,36,68,0.9);
+  display:flex;gap:4px;background:rgba(26,36,68,0.6);
   border:1px solid var(--gold-border);border-radius:20px;padding:3px;
 }
 .lang-btn{
@@ -452,11 +451,6 @@ body:not(.es) span[data-es]{display:none!important}
 <body>
 
 <!-- ════ LANGUAGE SWITCH ════ -->
-<div class="lang-switch" id="langSwitch">
-  <button class="lang-btn active" onclick="setLang('it')">IT</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
-</div>
-
 <!-- ════ INTRO ════ -->
 <div id="intro">
   <div class="intro-bg"></div>
@@ -552,6 +546,10 @@ body:not(.es) span[data-es]{display:none!important}
       <div class="trip-dates">
         <div class="d">27/06 → 04/07</div>
         <div class="p">8 <span data-it>giorni</span><span data-es>días</span></div>
+      </div>
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" onclick="setLang('it')">IT</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
       </div>
     </div>
     <div class="days-nav" id="daysNav">
@@ -1247,23 +1245,183 @@ body:not(.es) span[data-es]{display:none!important}
 
     </div><!-- /day2 -->
 
+    
+    <!-- ═══ GIORNO 4 ═══ -->
     <div class="day-panel" id="day3">
       <div class="day-hero">
         <div class="day-badge">📅 30 <span data-it>Giugno</span><span data-es>Junio</span> · <span data-it>Giorno</span><span data-es>Día</span> 4</div>
         <h2 data-it>Segesta & Riserva dello Zingaro</h2>
         <h2 data-es>Segesta & Reserva Natural dello Zingaro</h2>
         <div class="day-route">
-          <span data-it>Tempio greco V sec. a.C. · Calette per snorkeling</span>
-          <span data-es>Templo griego siglo V a.C. · Calas para snorkel</span>
+          <span data-it>Tempio dorico V sec. a.C. · Teatro greco · Cala Capreria · snorkeling</span>
+          <span data-es>Templo dórico siglo V a.C. · Teatro griego · Cala Capreria · snorkel</span>
         </div>
         <div class="day-stats">
-          <div class="stat"><span class="stat-val">~2h</span><span class="stat-lbl"><span data-it>Archeologia</span><span data-es>Arqueología</span></span></div>
-          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl">Mare</span></div>
+          <div class="stat"><span class="stat-val">~2h</span><span class="stat-lbl"><span data-it>Segesta</span><span data-es>Segesta</span></span></div>
+          <div class="stat"><span class="stat-val">~3h</span><span class="stat-lbl"><span data-it>Zingaro</span><span data-es>Zingaro</span></span></div>
+          <div class="stat"><span class="stat-val">5 €</span><span class="stat-lbl"><span data-it>Ingresso</span><span data-es>Entrada</span></span></div>
           <div class="stat"><span class="stat-val">La Tonnara</span><span class="stat-lbl">Hotel</span></div>
         </div>
       </div>
-      <div style="text-align:center;padding:50px 20px;color:rgba(245,239,224,0.25);font-size:13px">🏗️ <span data-it>Contenuti in preparazione…</span><span data-es>Contenido en preparación…</span></div>
-    </div>
+
+      <!-- Segesta -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">09:30</span><span class="dur">~2h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏛️ <span data-it>Parco Archeologico</span><span data-es>Parque Arqueológico</span></div>
+            <div class="stop-title">Tempio Dorico & Teatro Greco di Segesta</div>
+            <div class="stop-sub"><span data-it>Biglietto ~6 € · navetta per il teatro inclusa · cappello obbligatorio</span><span data-es>Entrada ~6 € · lanzadera para el teatro incluida · sombrero obligatorio</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=800&q=85','Tempio Dorico di Segesta — V secolo a.C.')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=600&q=80" alt="Tempio di Segesta" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Tempio Dorico di Segesta — 430-420 a.C., 36 colonne intatte</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:6px">
+              <div class="photo-item" onclick="apriLb('https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=85','Teatro greco di Segesta con vista sul golfo di Castellammare')">
+                <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=300&q=75" alt="Teatro greco" loading="lazy" onerror="this.parentElement.style.display='none'" style="width:100%;height:100px;object-fit:cover;border-radius:8px;display:block;cursor:pointer">
+                <div class="photo-cap">Teatro greco sul Monte Barbaro</div>
+              </div>
+              <div class="photo-item" onclick="apriLb('https://images.unsplash.com/photo-1548919973-5cef591cdbc9?w=800&q=85','Paesaggio siciliano collinare intorno a Segesta')">
+                <img src="https://images.unsplash.com/photo-1548919973-5cef591cdbc9?w=300&q=75" alt="Paesaggio Segesta" loading="lazy" onerror="this.parentElement.style.display='none'" style="width:100%;height:100px;object-fit:cover;border-radius:8px;display:block;cursor:pointer">
+                <div class="photo-cap">Paesaggio collinare circostante</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">📖 <span data-it>La storia — il grande mistero</span><span data-es>La historia — el gran misterio</span></div>
+            <p data-it>Il Tempio di Segesta è uno dei monumenti più misteriosi del mondo antico. Costruito tra il 430 e il 420 a.C. dagli <strong>Elimi</strong> — un popolo misterioso che la leggenda vuole discendente dai profughi di Troia guidati da Enea — il tempio ha 36 colonne doriche alte 10 metri, ancora perfettamente in piedi. Il mistero: <strong>non ha mai avuto una cella interna né un tetto</strong>. Non era mai stato completato? Era un tempio a cielo aperto per riti indigeni? Nessuno lo sa con certezza. Le colonne non sono scanalate, i blocchi dei gradini non rifiniti — tutto suggerisce lavori interrotti. Ma perché? La teoria più accreditata: la guerra con Selinunte, scoppiata nel 409 a.C., fermò tutto. Guy de Maupassant scrisse: <em>"Il tempio di Segesta sembra essere stato posto ai piedi della montagna da un uomo di genio che aveva avuto la rivelazione dell'unico punto in cui lo si doveva costruire."</em></p>
+            <p data-es>El Templo de Segesta es uno de los monumentos más misteriosos del mundo antiguo. Construido entre 430 y 420 a.C. por los <strong>Elimi</strong> — un pueblo misterioso que la leyenda dice descendiente de los refugiados de Troya guiados por Eneas — tiene 36 columnas dóricas de 10 metros aún perfectamente en pie. El misterio: <strong>nunca tuvo cella interior ni techo</strong>. ¿No fue completado? ¿Era un templo a cielo abierto para ritos indígenas? Nadie lo sabe con certeza. Guy de Maupassant escribió: <em>"El templo de Segesta parece haber sido colocado al pie de la montaña por un hombre de genio."</em></p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🎭 <span data-it>Il Teatro greco</span><span data-es>El Teatro griego</span></div>
+            <p data-it>In cima al Monte Barbaro, raggiungibile con la <strong>navetta inclusa nel biglietto</strong> (o 20 min a piedi in salita — sconsigliato a luglio con il caldo). Il teatro ha un diametro di 63 metri, la cavea scavata nella roccia. La vista dal teatro abbraccia il golfo di Castellammare e le colline fino al mare. <strong>In estate ospita spettacoli teatrali e concerti all'alba e al tramonto</strong> — se per caso c'è qualcosa il 30 giugno vale la pena controllare sul sito del Parco.</p>
+            <p data-es>En la cima del Monte Barbaro, accesible con <strong>lanzadera incluida en la entrada</strong> (o 20 min a pie subiendo — desaconsejado en julio con el calor). El teatro tiene 63 metros de diámetro. La vista abarca el golfo de Castellammare y las colinas hasta el mar. <strong>En verano acoge espectáculos teatrales y conciertos al amanecer y al atardecer</strong>.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <div class="cinema-badge">🎬 <span data-it>Per la cinefila</span><span data-es>Para la cinéfila</span></div>
+              <p data-it>Segesta ha ispirato direttamente <strong>Goethe</strong>, che la visitò il 20 aprile 1787 e ne scrisse nel <em>Viaggio in Italia</em>. Ma il collegamento cinematografico più affascinante è indiretto: la storia degli Elimi e la leggenda troiana di Segesta fu una delle fonti di ispirazione per <strong>Wolfgang Petersen</strong> quando girò <em><strong>Troy</strong></em> (2004) con <strong>Brad Pitt, Orlando Bloom e Diane Kruger</strong>. Alcune sequenze del film che mostrano i Troiani in fuga hanno un'eco diretta nelle leggende degli Elimi siciliani. Non è un caso che la Sicilia sia piena di miti troiani — Segesta, Erice, Trapani stessa hanno tutte leggende di fondazione troiana.</p>
+              <p data-es>Segesta inspiró directamente a <strong>Goethe</strong>, que la visitó el 20 de abril de 1787 y escribió sobre ella en <em>Viaje a Italia</em>. La conexión cinematográfica más fascinante es indirecta: la historia de los Elimi y la leyenda troyana de Segesta fue una de las fuentes de inspiración para <strong>Wolfgang Petersen</strong> cuando rodó <em><strong>Troya</strong></em> (2004) con <strong>Brad Pitt, Orlando Bloom y Diane Kruger</strong>. No es casualidad que Sicilia esté llena de mitos troyanos — Segesta, Erice, Trápani tienen todas leyendas de fundación troyana.</p>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">💡 <span data-it>Consigli pratici</span><span data-es>Consejos prácticos</span></div>
+            <p data-it>① <strong>Navetta per il teatro</strong> — prendila sempre, la salita a piedi è impegnativa con il caldo di fine giugno<br>② <strong>Arrivare alle 9:30</strong> — prima che arrivi il calore e i gruppi turistici<br>③ <strong>Acqua abbondante</strong> — almeno 1,5 lt a testa, non ci sono fontane<br>④ <strong>Cappello indispensabile</strong> — il tempio non ha ombra<br>⑤ Il parco è su una collina con vista a 360° — portate la fotocamera</p>
+            <p data-es>① <strong>Lanzadera para el teatro</strong> — tómenla siempre, la subida a pie es dura con el calor<br>② <strong>Llegar a las 9:30</strong> — antes del calor y los grupos turísticos<br>③ <strong>Agua abundante</strong> — al menos 1,5 lt por persona<br>④ <strong>Sombrero indispensable</strong> — el templo no tiene sombra<br>⑤ El parque está en una colina con vistas a 360° — lleven la cámara</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zingaro -->
+      <div class="stop-card" onclick="toggleStop(this)">
+        <div class="stop-header">
+          <div class="stop-time"><span class="t">13:00</span><span class="dur">~3h</span></div>
+          <div class="stop-meta">
+            <div class="stop-type">🏊 <span data-it>Riserva + Mare</span><span data-es>Reserva + Mar</span></div>
+            <div class="stop-title">Riserva Naturale dello Zingaro — Cala Capreria</div>
+            <div class="stop-sub"><span data-it>Ingresso 5 € · solo lato Scopello (Sud) · scarpe chiuse OBBLIGATORIE</span><span data-es>Entrada 5 € · solo lado Scopello (Sur) · zapatos cerrados OBLIGATORIOS</span></div>
+          </div>
+          <div class="stop-chevron">›</div>
+        </div>
+        <div class="stop-detail">
+          <div class="dsec">
+            <div class="dsec-head">📸 <span data-it>Galleria</span><span data-es>Galería</span></div>
+            <div class="photo-hero" onclick="apriLb('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=85','Riserva dello Zingaro — calette con acqua cristallina')" title="Tocca per ingrandire">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Zingaro caletta" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <div class="photo-cap">Riserva dello Zingaro — acque cristalline e macchia mediterranea</div>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🗺️ <span data-it>Come funziona — leggere con attenzione</span><span data-es>Cómo funciona — leer con atención</span></div>
+            <p data-it>✅ <strong>Aperta tutti i giorni 7:00-19:00</strong> — confermato dal sito ufficiale<br>✅ <strong>Ingresso solo lato Sud (Scopello)</strong> — lato Nord chiuso al momento<br><br><strong>Dal parcheggio al mare:</strong> parcheggiate all'esterno (~5 €/giorno), comprate il biglietto (5 €), attraversate il famoso <strong>tunnel scavato nella roccia</strong> — simbolo della riserva, fu lasciato incompiuto nel 1980 per fermare la costruzione di una strada litorale che avrebbe distrutto tutto. Usciti dal tunnel, <strong>Cala Capreria è a 20 minuti a piedi</strong> in discesa verso il mare (1,4 km). Niente macchina — solo sentieri a piedi.</p>
+            <p data-es>✅ <strong>Abierta todos los días 7:00-19:00</strong> — confirmado por el sitio oficial<br>✅ <strong>Entrada solo lado Sur (Scopello)</strong> — lado Norte cerrado actualmente<br><br><strong>Del aparcamiento al mar:</strong> aparcad fuera (~5 €/día), comprad la entrada (5 €), cruzad el famoso <strong>túnel excavado en la roca</strong> — símbolo de la reserva, fue abandonado en 1980 para detener la construcción de una carretera litoral que lo habría destruido todo. Saliendo del túnel, <strong>Cala Capreria está a 20 minutos andando</strong> en bajada hacia el mar (1,4 km). Sin coche — solo senderos a pie.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">🏖️ <span data-it>Cala Capreria — la vostra meta</span><span data-es>Cala Capreria — vuestro destino</span></div>
+            <p data-it>La prima caletta dall'ingresso Sud — la più <strong>selvaggia e meno affollata</strong>. Ciottoli bianchi, acqua azzurra trasparente, rocce che si tuffano nel mare, macchia mediterranea odorosa tutto intorno. Fondali ottimi per snorkeling — cernie, polpi, ricci. La caletta non ha ombrelloni né servizi — è natura pura. Portate tutto: telo, snorkel, acqua, cibo.<br><br><strong>Importante per la vostra compagna:</strong> l'acqua è bassissima e limpidissima vicino alla riva — ideale anche per chi non nuota. Può stare sui ciottoli e godersi il paesaggio senza entrare in acqua.</p>
+            <p data-es>La primera caleta desde la entrada Sur — la más <strong>salvaje y menos concurrida</strong>. Cantos blancos, agua azul transparente, rocas que se sumergen en el mar, matorral mediterráneo aromático alrededor. Fondos excelentes para snorkel — meros, pulpos, erizos. La caleta no tiene sombrillas ni servicios — es naturaleza pura. Traed todo: toalla, snorkel, agua, comida.<br><br><strong>Importante para la compañera:</strong> el agua es muy poco profunda y clara cerca de la orilla — ideal también para quien no sabe nadar.</p>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">✨ Aneddoto</div>
+            <div class="aneddoto">
+              <p data-it>La Riserva dello Zingaro esiste grazie a una delle prime grandi battaglie ambientaliste italiane. Nel 1980 il governo siciliano aveva approvato la costruzione di una strada litorale che avrebbe collegato Scopello a San Vito Lo Capo attraversando la costa. <strong>Diecimila persone marciarono a piedi lungo il futuro tracciato della strada</strong> per protestare — una delle prime marce ambientaliste italiane. La protesta fermò i lavori. Il tunnel scavato nella roccia che attraverserete entrando nella riserva è il simbolo di quella vittoria: i lavori si fermarono esattamente lì, nella roccia, il giorno della protesta.</p>
+              <p data-es>La Reserva dello Zingaro existe gracias a una de las primeras grandes batallas ambientalistas italianas. En 1980 el gobierno siciliano había aprobado la construcción de una carretera litoral. <strong>Diez mil personas marcharon a pie</strong> por el futuro trazado de la carretera para protestar — una de las primeras marchas ambientalistas italianas. La protesta detuvo las obras. El túnel excavado en la roca que cruzaréis al entrar en la reserva es el símbolo de esa victoria.</p>
+            </div>
+          </div>
+
+          <div class="dsec">
+            <div class="dsec-head">⚠️ <span data-it>Lista cose da portare</span><span data-es>Lista de cosas que llevar</span></div>
+            <p data-it>🥿 <strong>Scarpe chiuse obbligatorie</strong> — infradito vietate, multa all'ingresso<br>🤿 Maschera e boccaglio<br>💧 Almeno 1,5 lt di acqua a testa — non ci sono fontane<br>🥪 Pranzo al sacco — bar solo all'ingresso<br>🧴 Crema solare alta protezione<br>🎒 Zaino leggero<br>👟 Scarpette da scoglio per il bagno</p>
+            <p data-es>🥿 <strong>Zapatos cerrados obligatorios</strong> — chanclas prohibidas, multa en la entrada<br>🤿 Máscara y tubo<br>💧 Al menos 1,5 lt de agua por persona — no hay fuentes<br>🥪 Comida para llevar — bar solo en la entrada<br>🧴 Crema solar alta protección<br>🎒 Mochila ligera<br>👟 Escarpines para las rocas</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ristoranti fissi Giorno 4 -->
+      <div style="background:rgba(74,124,89,0.08);border:1px solid rgba(74,124,89,0.25);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8FC49A;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          🍽️ <span data-it>DOVE MANGIARE — Giorno 4</span><span data-es>DÓNDE COMER — Día 4</span>
+          <span style="flex:1;height:1px;background:rgba(74,124,89,0.25)"></span>
+        </div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🥗 <span data-it>Pranzo — Zingaro al sacco o bar ingresso (~13:00)</span><span data-es>Almuerzo — Zingaro al sacco o bar entrada (~13:00)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name" data-it>Pranzo al sacco in Cala Capreria</div>
+              <div class="rist-name" data-es>Almuerzo al saco en Cala Capreria</div>
+              <div class="rist-desc" data-it>La scelta migliore. Preparate panini o comprate pane cunzato a Scopello prima di entrare. Mangiate sulla caletta con vista mare. Niente di più bello.</div>
+              <div class="rist-desc" data-es>La mejor opción. Preparen bocadillos o compren pane cunzato en Scopello antes de entrar. Coman en la caleta con vista al mar. Nada mejor.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name" data-it>Bar all'ingresso della Riserva</div>
+              <div class="rist-name" data-es>Bar en la entrada de la Reserva</div>
+              <div class="rist-desc" data-it>Panini, bibite, gelati. Limitato ma comodo. Prezzi un po' alti come tutti i bar nelle riserve naturali. Meglio portare qualcosa da casa.</div>
+              <div class="rist-desc" data-es>Bocadillos, bebidas, helados. Limitado pero cómodo. Precios algo altos como todos los bares en reservas naturales. Mejor traer algo de casa.</div>
+            </div></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:9px;color:rgba(245,239,224,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">🌙 <span data-it>Cena — Trapani/Valderice (~20:00)</span><span data-es>Cena — Trápani/Valderice (~20:00)</span></div>
+          <div class="ristoranti">
+            <div class="rist-item"><div class="rist-num">1</div><div>
+              <div class="rist-name">Trattoria del Porto — Trapani</div>
+              <div class="rist-desc" data-it>Lungo il porto di Trapani. Pesce freschissimo, cucina trapanese autentica: pasta con le sarde, busiate al pesto trapanese, polpo. Prezzi onesti ~20-25 € a persona. Atmosfera da porto vero.</div>
+              <div class="rist-desc" data-es>A lo largo del puerto de Trápani. Pescado fresco, cocina trapanesa auténtica: pasta con sardinas, busiate al pesto trapanés, pulpo. Precios honestos ~20-25 € por persona.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">2</div><div>
+              <div class="rist-name">La Bettolaccia — Trapani</div>
+              <div class="rist-desc" data-it>Via Fardella, Trapani. Trattoria storica seguitissima dai locali. Busiate al pesto trapanese (il piatto della città), tonno fresco, cous cous. ~20 € a persona. Prenotare se possibile: tel. 0923 21695.</div>
+              <div class="rist-desc" data-es>Via Fardella, Trápani. Trattoria histórica muy seguida por los locales. Busiate al pesto trapanés (el plato de la ciudad), atún fresco, cuscús. ~20 € por persona. Reservar si es posible: tel. 0923 21695.</div>
+            </div></div>
+            <div class="rist-item"><div class="rist-num">3</div><div>
+              <div class="rist-name" data-it>Ristorante La Tonnara (hotel)</div>
+              <div class="rist-name" data-es>Restaurante La Tonnara (hotel)</div>
+              <div class="rist-desc" data-it>Dopo una giornata tra Segesta e lo Zingaro, la cena in hotel è la scelta del relax totale. Vista sul pontile e sul mare di Bonagia.</div>
+              <div class="rist-desc" data-es>Después de un día entre Segesta y Zingaro, cenar en el hotel es la elección del relax total. Vista al mar de Bonagia.</div>
+            </div></div>
+          </div>
+        </div>
+        <div style="margin-top:10px;padding:10px;background:rgba(201,168,76,0.08);border-radius:8px;border-left:2px solid var(--gold)">
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-it>🍝 <strong>Il piatto tipico di Trapani da non perdere:</strong> le <strong>Busiate al pesto trapanese</strong> — pasta fresca a spirale condita con pesto di pomodoro, mandorle, basilico e aglio. Niente formaggio — è una ricetta araba-normanna. Completamente diversa dal pesto genovese.</p>
+          <p style="font-size:11px;color:rgba(245,239,224,0.7)" data-es>🍝 <strong>El plato típico de Trápani que no hay que perderse:</strong> las <strong>Busiate al pesto trapanés</strong> — pasta fresca en espiral con pesto de tomate, almendras, albahaca y ajo. Sin queso — receta árabe-normanda. Completamente diferente al pesto genovés.</p>
+        </div>
+      </div>
+
+    </div><!-- /day3 -->
 
     <div class="day-panel" id="day4">
       <div class="day-hero">
